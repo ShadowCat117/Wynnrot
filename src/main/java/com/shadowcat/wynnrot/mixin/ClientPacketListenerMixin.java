@@ -13,6 +13,7 @@ import com.shadowcat.wynnrot.utils.MixinUtils;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.multiplayer.ClientPacketListener;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.game.ClientboundSetSubtitleTextPacket;
 import net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket;
 import org.spongepowered.asm.mixin.Mixin;
 
@@ -30,8 +31,34 @@ public class ClientPacketListenerMixin {
 
     String plainText = ChatFormatting.stripFormatting(component.getString());
     if (plainText.equals("The Piranha") || plainText.equals("The Corrupted Piranha")) {
+      String bigFishText =
+          plainText.contains("Corrupted") ? "Le Corrupted Big Fish" : "Le Big Fish";
       ClientboundSetTitleTextPacket newPacket =
-          new ClientboundSetTitleTextPacket(Component.literal("Le Big Fish").withColor(0x00f010));
+          new ClientboundSetTitleTextPacket(Component.literal(bigFishText).withColor(0x00f010));
+
+      original.call(newPacket);
+    } else {
+      original.call(packet);
+    }
+  }
+
+  @WrapMethod(
+      method =
+          "setSubtitleText(Lnet/minecraft/network/protocol/game/ClientboundSetSubtitleTextPacket;)V")
+  private void wrapSetTitleText(ClientboundSetSubtitleTextPacket packet, Operation<Void> original) {
+    if (!MixinUtils.onWynncraft() || !WynnrotConfig.leBigFish()) {
+      original.call(packet);
+      return;
+    }
+
+    Component component = packet.text();
+
+    String plainText = ChatFormatting.stripFormatting(component.getString());
+    if (plainText.equals("The Piranha") || plainText.equals("The Corrupted Piranha")) {
+      String bigFishText =
+          plainText.contains("Corrupted") ? "Le Corrupted Big Fish" : "Le Big Fish";
+      ClientboundSetSubtitleTextPacket newPacket =
+          new ClientboundSetSubtitleTextPacket(Component.literal(bigFishText).withColor(0x00f010));
 
       original.call(newPacket);
     } else {
