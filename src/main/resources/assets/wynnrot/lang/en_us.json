@@ -1,0 +1,20 @@
+{
+  "wynnrot.config": "Wynnrot Configuration",
+  "wynnrot.config.category.chat": "Chat",
+  "wynnrot.config.category.portraits": "Portraits",
+  "wynnrot.config.category.titles": "Titles",
+  "wynnrot.config.eternalHungerSui.description": "Make Sui always eating",
+  "wynnrot.config.eternalHungerSui.name": "Eternal Hunger Sui",
+  "wynnrot.config.eternalHungerSuiUpdateRate.description": "After how many ticks should the portrait update?",
+  "wynnrot.config.eternalHungerSuiUpdateRate.name": "Eternal Hunger Sui Update Rate",
+  "wynnrot.config.leBigFish.description": "Replace the title with 'Le Big Fish' in Galleon's Graveyard?",
+  "wynnrot.config.leBigFish.name": "Le Big Fish",
+  "wynnrot.config.meow.description": "Play a cat noise when a chat message contains the word 'meow'",
+  "wynnrot.config.meow.name": "Meow",
+  "wynnrot.config.meowChance.description": "Chance to play a cat noise when a chat message contains the word 'meow'",
+  "wynnrot.config.meowChance.name": "Meow Chance",
+  "wynnrot.config.sixSevenQueen.description": "Replace the Fruma Queen portrait with the six seven variant",
+  "wynnrot.config.sixSevenQueen.name": "Six Seven Queen",
+  "wynnrot.config.sixSevenQueenUpdateRate.description": "After how many ticks should the portrait be updated?",
+  "wynnrot.config.sixSevenQueenUpdateRate.name": "Six Seven Queen Update Rate"
+}

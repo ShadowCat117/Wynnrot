@@ -1,0 +1,15 @@
+{
+	"required": true,
+	"package": "com.shadowcat.wynnrot.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+      "ChatListenerMixin",
+      "ClientPacketListenerMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

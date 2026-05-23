@@ -1,0 +1,30 @@
+{
+	"schemaVersion": 1,
+	"id": "wynnrot",
+	"version": "${version}",
+	"name": "Wynnrot",
+	"description": "Wynncraft QoL mods? Never heard of them, time for some stupid changes",
+	"authors": [
+		"ShadowCat"
+	],
+	"license": "Apache-2.0",
+	"icon": "assets/wynnrot/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+          "com.shadowcat.wynnrot.Wynnrot"
+		],
+		"modmenu": [
+			"com.shadowcat.wynnrot.config.ModMenuIntegration"
+		]
+	},
+	"mixins": [
+		"wynnrot.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.2",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"cloth-config": "*"
+	}
+}

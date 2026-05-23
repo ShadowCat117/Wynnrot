@@ -1,0 +1,26 @@
+# Build directories by various build systems
+build/
+out/
+output/
+bin/
+libs/
+classes/
+.gradle/
+
+# Data generated while running Minecraft
+run/
+
+# IDEs
+.idea/
+.classpath
+.project
+.metadata
+.vscode
+.settings
+*.ipr
+*.iws
+*.iml
+*.launch
+
+# macOS junk
+.DS_Store
