@@ -12,18 +12,17 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 
 public final class SoundUtils {
-  private static final List<SoundEvent> CAT_SOUNDS =
-      List.of(
-          SoundEvents.CAT_AMBIENT,
-          SoundEvents.CAT_STRAY_AMBIENT,
-          SoundEvents.CAT_HISS,
-          SoundEvents.CAT_BEG_FOR_FOOD,
-          SoundEvents.CAT_PURR,
-          SoundEvents.CAT_PURREOW);
+    private static final List<SoundEvent> CAT_SOUNDS = List.of(
+            SoundEvents.CAT_AMBIENT,
+            SoundEvents.CAT_STRAY_AMBIENT,
+            SoundEvents.CAT_HISS,
+            SoundEvents.CAT_BEG_FOR_FOOD,
+            SoundEvents.CAT_PURR,
+            SoundEvents.CAT_PURREOW);
 
-  public static SoundEvent getRandomCatSound() {
-    Random random = new Random();
-    int randomIndex = random.nextInt(CAT_SOUNDS.size());
-    return CAT_SOUNDS.get(randomIndex);
-  }
+    public static SoundEvent getRandomCatSound() {
+        Random random = new Random();
+        int randomIndex = random.nextInt(CAT_SOUNDS.size());
+        return CAT_SOUNDS.get(randomIndex);
+    }
 }

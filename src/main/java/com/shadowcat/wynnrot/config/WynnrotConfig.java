@@ -14,111 +14,111 @@ import java.io.IOException;
 import net.fabricmc.loader.api.FabricLoader;
 
 public class WynnrotConfig {
-  private static final File CONFIG_FILE =
-      new File(FabricLoader.getInstance().getConfigDir().toFile(), "Wynnrot.json");
+    private static final File CONFIG_FILE =
+            new File(FabricLoader.getInstance().getConfigDir().toFile(), "Wynnrot.json");
 
-  private static Config config;
+    private static Config config;
 
-  private static class Config {
-    boolean sixSevenQueen = true;
-    int sixSevenQueenUpdateRate = 2;
-    boolean eternalHungerSui = true;
-    int eternalHungerSuiUpdateRate = 4;
-    boolean meow = true;
-    int meowChance = 100;
-    boolean leBigFish = true;
-  }
-
-  public static void init() {
-    loadConfig();
-  }
-
-  public static boolean editActionBar() {
-    return config.eternalHungerSui || config.sixSevenQueen;
-  }
-
-  public static boolean sixSevenQueen() {
-    return config.sixSevenQueen;
-  }
-
-  public static void updateSixSevenQueen(boolean value) {
-    config.sixSevenQueen = value;
-    saveConfig();
-  }
-
-  public static int sixSevenQueenUpdateRate() {
-    return config.sixSevenQueenUpdateRate;
-  }
-
-  public static void updateSixSevenQueenUpdateRate(int value) {
-    config.sixSevenQueenUpdateRate = value;
-    saveConfig();
-  }
-
-  public static boolean eternalHungerSui() {
-    return config.eternalHungerSui;
-  }
-
-  public static void updateEternalHungerSui(boolean value) {
-    config.eternalHungerSui = value;
-    saveConfig();
-  }
-
-  public static int eternalHungerSuiUpdateRate() {
-    return config.eternalHungerSuiUpdateRate;
-  }
-
-  public static void updateEternalHungerSuiUpdateRate(int value) {
-    config.eternalHungerSuiUpdateRate = value;
-    saveConfig();
-  }
-
-  public static boolean meow() {
-    return config.meow;
-  }
-
-  public static void updateMeow(boolean value) {
-    config.meow = value;
-    saveConfig();
-  }
-
-  public static int meowChance() {
-    return config.meowChance;
-  }
-
-  public static void updateMeowChance(int value) {
-    config.meowChance = value;
-    saveConfig();
-  }
-
-  public static boolean leBigFish() {
-    return config.leBigFish;
-  }
-
-  public static void updateLeBigFish(boolean value) {
-    config.leBigFish = value;
-    saveConfig();
-  }
-
-  private static void loadConfig() {
-    if (CONFIG_FILE.exists()) {
-      try (FileReader fileReader = new FileReader(CONFIG_FILE)) {
-        config = Wynnrot.GSON.fromJson(fileReader, Config.class);
-      } catch (IOException e) {
-        Wynnrot.error("Failed to load config", e);
-      }
+    private static class Config {
+        boolean sixSevenQueen = true;
+        int sixSevenQueenUpdateRate = 2;
+        boolean eternalHungerSui = true;
+        int eternalHungerSuiUpdateRate = 4;
+        boolean meow = true;
+        int meowChance = 100;
+        boolean leBigFish = true;
     }
-    if (config == null) {
-      config = new Config();
-      saveConfig();
-    }
-  }
 
-  private static void saveConfig() {
-    try (FileWriter writer = new FileWriter(CONFIG_FILE)) {
-      Wynnrot.GSON.toJson(config, writer);
-    } catch (IOException e) {
-      Wynnrot.error("Failed to save config", e);
+    public static void init() {
+        loadConfig();
     }
-  }
+
+    public static boolean editActionBar() {
+        return config.eternalHungerSui || config.sixSevenQueen;
+    }
+
+    public static boolean sixSevenQueen() {
+        return config.sixSevenQueen;
+    }
+
+    public static void updateSixSevenQueen(boolean value) {
+        config.sixSevenQueen = value;
+        saveConfig();
+    }
+
+    public static int sixSevenQueenUpdateRate() {
+        return config.sixSevenQueenUpdateRate;
+    }
+
+    public static void updateSixSevenQueenUpdateRate(int value) {
+        config.sixSevenQueenUpdateRate = value;
+        saveConfig();
+    }
+
+    public static boolean eternalHungerSui() {
+        return config.eternalHungerSui;
+    }
+
+    public static void updateEternalHungerSui(boolean value) {
+        config.eternalHungerSui = value;
+        saveConfig();
+    }
+
+    public static int eternalHungerSuiUpdateRate() {
+        return config.eternalHungerSuiUpdateRate;
+    }
+
+    public static void updateEternalHungerSuiUpdateRate(int value) {
+        config.eternalHungerSuiUpdateRate = value;
+        saveConfig();
+    }
+
+    public static boolean meow() {
+        return config.meow;
+    }
+
+    public static void updateMeow(boolean value) {
+        config.meow = value;
+        saveConfig();
+    }
+
+    public static int meowChance() {
+        return config.meowChance;
+    }
+
+    public static void updateMeowChance(int value) {
+        config.meowChance = value;
+        saveConfig();
+    }
+
+    public static boolean leBigFish() {
+        return config.leBigFish;
+    }
+
+    public static void updateLeBigFish(boolean value) {
+        config.leBigFish = value;
+        saveConfig();
+    }
+
+    private static void loadConfig() {
+        if (CONFIG_FILE.exists()) {
+            try (FileReader fileReader = new FileReader(CONFIG_FILE)) {
+                config = Wynnrot.GSON.fromJson(fileReader, Config.class);
+            } catch (IOException e) {
+                Wynnrot.error("Failed to load config", e);
+            }
+        }
+        if (config == null) {
+            config = new Config();
+            saveConfig();
+        }
+    }
+
+    private static void saveConfig() {
+        try (FileWriter writer = new FileWriter(CONFIG_FILE)) {
+            Wynnrot.GSON.toJson(config, writer);
+        } catch (IOException e) {
+            Wynnrot.error("Failed to save config", e);
+        }
+    }
 }

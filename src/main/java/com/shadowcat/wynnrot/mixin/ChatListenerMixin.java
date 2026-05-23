@@ -29,66 +29,60 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(ChatListener.class)
 public class ChatListenerMixin {
-  @Unique private static final Random RANDOM = new Random();
+    @Unique
+    private static final Random RANDOM = new Random();
 
-  @WrapMethod(method = "handleSystemMessage(Lnet/minecraft/network/chat/Component;Z)V", order = 999)
-  private void wrapHandleSystemMessage(
-      Component message, boolean isOverlay, Operation<Void> original) {
-    if (!MixinUtils.onWynncraft() || !isOverlay || !WynnrotConfig.editActionBar()) {
-      original.call(message, isOverlay);
-      return;
+    @WrapMethod(method = "handleSystemMessage(Lnet/minecraft/network/chat/Component;Z)V", order = 999)
+    private void wrapHandleSystemMessage(Component message, boolean isOverlay, Operation<Void> original) {
+        if (!MixinUtils.onWynncraft() || !isOverlay || !WynnrotConfig.editActionBar()) {
+            original.call(message, isOverlay);
+            return;
+        }
+
+        Component newComponent = message;
+
+        if (WynnrotConfig.sixSevenQueen()) {
+            newComponent = ActionBarUtils.replaceCharacterAnimated(
+                    newComponent,
+                    "\uE0D2",
+                    Fonts.FRUMA_QUEEN_67.characters(),
+                    WynnrotConfig.sixSevenQueenUpdateRate(),
+                    Identifier.withDefaultNamespace("hud/dialogue/portrait"),
+                    new FontDescription.Resource(Fonts.FRUMA_QUEEN_67.identifier()));
+        }
+
+        if (WynnrotConfig.eternalHungerSui()) {
+            newComponent = ActionBarUtils.replaceCharactersAnimated(
+                    newComponent,
+                    Fonts.RIGHT_SUI.characters(),
+                    Fonts.RIGHT_SUI_EATING.characters(),
+                    WynnrotConfig.eternalHungerSuiUpdateRate(),
+                    Fonts.RIGHT_SUI.identifier(),
+                    new FontDescription.Resource(Fonts.RIGHT_SUI_EATING.identifier()));
+
+            newComponent = ActionBarUtils.replaceCharactersAnimated(
+                    newComponent,
+                    Fonts.LEFT_SUI.characters(),
+                    Fonts.LEFT_SUI_EATING.characters(),
+                    WynnrotConfig.eternalHungerSuiUpdateRate(),
+                    Fonts.LEFT_SUI.identifier(),
+                    new FontDescription.Resource(Fonts.LEFT_SUI_EATING.identifier()));
+        }
+
+        original.call(newComponent, true);
     }
 
-    Component newComponent = message;
+    @Inject(method = "handleSystemMessage(Lnet/minecraft/network/chat/Component;Z)V", at = @At("HEAD"), order = 999)
+    private void handleSystemMessagePre(Component message, boolean isOverlay, CallbackInfo ci) {
+        if (!MixinUtils.onWynncraft() || !WynnrotConfig.meow() || WynnrotConfig.meowChance() == 0) {
+            return;
+        }
 
-    if (WynnrotConfig.sixSevenQueen()) {
-      newComponent =
-          ActionBarUtils.replaceCharacterAnimated(
-              newComponent,
-              "\uE0D2",
-              Fonts.FRUMA_QUEEN_67.characters(),
-              WynnrotConfig.sixSevenQueenUpdateRate(),
-              Identifier.withDefaultNamespace("hud/dialogue/portrait"),
-              new FontDescription.Resource(Fonts.FRUMA_QUEEN_67.identifier()));
+        if (message.getString().toLowerCase(Locale.ROOT).contains("meow")
+                && RANDOM.nextInt(100) < WynnrotConfig.meowChance()) {
+            McUtils.mc()
+                    .getSoundManager()
+                    .play(SimpleSoundInstance.forLocalAmbience(SoundUtils.getRandomCatSound(), 1.0f, 1.0f));
+        }
     }
-
-    if (WynnrotConfig.eternalHungerSui()) {
-      newComponent =
-          ActionBarUtils.replaceCharactersAnimated(
-              newComponent,
-              Fonts.RIGHT_SUI.characters(),
-              Fonts.RIGHT_SUI_EATING.characters(),
-              WynnrotConfig.eternalHungerSuiUpdateRate(),
-              Fonts.RIGHT_SUI.identifier(),
-              new FontDescription.Resource(Fonts.RIGHT_SUI_EATING.identifier()));
-
-      newComponent =
-          ActionBarUtils.replaceCharactersAnimated(
-              newComponent,
-              Fonts.LEFT_SUI.characters(),
-              Fonts.LEFT_SUI_EATING.characters(),
-              WynnrotConfig.eternalHungerSuiUpdateRate(),
-              Fonts.LEFT_SUI.identifier(),
-              new FontDescription.Resource(Fonts.LEFT_SUI_EATING.identifier()));
-    }
-
-    original.call(newComponent, true);
-  }
-
-  @Inject(
-      method = "handleSystemMessage(Lnet/minecraft/network/chat/Component;Z)V",
-      at = @At("HEAD"),
-      order = 999)
-  private void handleSystemMessagePre(Component message, boolean isOverlay, CallbackInfo ci) {
-    if (!MixinUtils.onWynncraft() || !WynnrotConfig.meow() || WynnrotConfig.meowChance() == 0) {
-      return;
-    }
-
-    if (message.getString().toLowerCase(Locale.ROOT).contains("meow")
-        && RANDOM.nextInt(100) < WynnrotConfig.meowChance()) {
-      McUtils.mc()
-          .getSoundManager()
-          .play(SimpleSoundInstance.forLocalAmbience(SoundUtils.getRandomCatSound(), 1.0f, 1.0f));
-    }
-  }
 }

@@ -14,28 +14,28 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class Wynnrot implements ModInitializer {
-  public static final String MOD_ID = "wynnrot";
-  public static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
-  public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+    public static final String MOD_ID = "wynnrot";
+    public static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
+    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-  @Override
-  public void onInitialize() {
-    WynnrotConfig.init();
-  }
+    @Override
+    public void onInitialize() {
+        WynnrotConfig.init();
+    }
 
-  public static void info(String message) {
-    LOGGER.info(message);
-  }
+    public static void info(String message) {
+        LOGGER.info(message);
+    }
 
-  public static void warn(String message) {
-    LOGGER.warn(message);
-  }
+    public static void warn(String message) {
+        LOGGER.warn(message);
+    }
 
-  public static void error(String message) {
-    LOGGER.error(message);
-  }
+    public static void error(String message) {
+        LOGGER.error(message);
+    }
 
-  public static void error(String message, Object arg) {
-    LOGGER.error(message, arg);
-  }
+    public static void error(String message, Object arg) {
+        LOGGER.error(message, arg);
+    }
 }

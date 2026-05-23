@@ -36,7 +36,7 @@ spotless {
 
 		importOrder()
 		removeUnusedImports()
-		googleJavaFormat()
+		palantirJavaFormat()
 		trimTrailingWhitespace()
 		endWithNewline()
 		toggleOffOn()

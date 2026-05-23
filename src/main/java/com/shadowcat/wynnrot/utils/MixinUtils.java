@@ -7,9 +7,9 @@
 package com.shadowcat.wynnrot.utils;
 
 public final class MixinUtils {
-  private static final String WYNNCRAFT_SERVER_BRAND = "Wynn";
+    private static final String WYNNCRAFT_SERVER_BRAND = "Wynn";
 
-  public static boolean onWynncraft() {
-    return McUtils.serverBrand().equals(WYNNCRAFT_SERVER_BRAND);
-  }
+    public static boolean onWynncraft() {
+        return McUtils.serverBrand().equals(WYNNCRAFT_SERVER_BRAND);
+    }
 }

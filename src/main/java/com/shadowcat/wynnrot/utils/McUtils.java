@@ -11,19 +11,19 @@ import net.minecraft.client.multiplayer.ClientPacketListener;
 import net.minecraft.client.player.LocalPlayer;
 
 public final class McUtils {
-  public static Minecraft mc() {
-    return Minecraft.getInstance();
-  }
+    public static Minecraft mc() {
+        return Minecraft.getInstance();
+    }
 
-  public static LocalPlayer player() {
-    return mc().player;
-  }
+    public static LocalPlayer player() {
+        return mc().player;
+    }
 
-  public static String serverBrand() {
-    ClientPacketListener clientPacketListener = mc().getConnection();
+    public static String serverBrand() {
+        ClientPacketListener clientPacketListener = mc().getConnection();
 
-    if (clientPacketListener == null) return "";
+        if (clientPacketListener == null) return "";
 
-    return clientPacketListener.serverBrand();
-  }
+        return clientPacketListener.serverBrand();
+    }
 }
