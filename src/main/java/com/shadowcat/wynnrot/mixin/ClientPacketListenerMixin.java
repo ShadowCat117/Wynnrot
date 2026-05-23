@@ -9,6 +9,7 @@ package com.shadowcat.wynnrot.mixin;
 import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.shadowcat.wynnrot.config.WynnrotConfig;
+import com.shadowcat.wynnrot.utils.MixinUtils;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.multiplayer.ClientPacketListener;
 import net.minecraft.network.chat.Component;
@@ -18,10 +19,9 @@ import org.spongepowered.asm.mixin.Mixin;
 @Mixin(ClientPacketListener.class)
 public class ClientPacketListenerMixin {
   @WrapMethod(
-      method = "setTitleText(Lnet/minecraft/network/protocol/game/ClientboundSetTitleTextPacket;)V",
-      order = 999)
+      method = "setTitleText(Lnet/minecraft/network/protocol/game/ClientboundSetTitleTextPacket;)V")
   private void wrapSetTitleText(ClientboundSetTitleTextPacket packet, Operation<Void> original) {
-    if (!WynnrotConfig.leBigFish()) {
+    if (!MixinUtils.onWynncraft() || !WynnrotConfig.leBigFish()) {
       original.call(packet);
       return;
     }

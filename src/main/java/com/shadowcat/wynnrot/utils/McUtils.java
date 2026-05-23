@@ -7,6 +7,7 @@
 package com.shadowcat.wynnrot.utils;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.multiplayer.ClientPacketListener;
 import net.minecraft.client.player.LocalPlayer;
 
 public final class McUtils {
@@ -16,5 +17,13 @@ public final class McUtils {
 
   public static LocalPlayer player() {
     return mc().player;
+  }
+
+  public static String serverBrand() {
+    ClientPacketListener clientPacketListener = mc().getConnection();
+
+    if (clientPacketListener == null) return "";
+
+    return clientPacketListener.serverBrand();
   }
 }

@@ -12,6 +12,7 @@ import com.shadowcat.wynnrot.config.WynnrotConfig;
 import com.shadowcat.wynnrot.data.Fonts;
 import com.shadowcat.wynnrot.utils.ActionBarUtils;
 import com.shadowcat.wynnrot.utils.McUtils;
+import com.shadowcat.wynnrot.utils.MixinUtils;
 import com.shadowcat.wynnrot.utils.SoundUtils;
 import java.util.Locale;
 import java.util.Random;
@@ -21,18 +22,19 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FontDescription;
 import net.minecraft.resources.Identifier;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(ChatListener.class)
 public class ChatListenerMixin {
-  private static final Random RANDOM = new Random();
+  @Unique private static final Random RANDOM = new Random();
 
   @WrapMethod(method = "handleSystemMessage(Lnet/minecraft/network/chat/Component;Z)V", order = 999)
   private void wrapHandleSystemMessage(
       Component message, boolean isOverlay, Operation<Void> original) {
-    if (!isOverlay || !WynnrotConfig.editActionBar()) {
+    if (!MixinUtils.onWynncraft() || !isOverlay || !WynnrotConfig.editActionBar()) {
       original.call(message, isOverlay);
       return;
     }
@@ -78,7 +80,9 @@ public class ChatListenerMixin {
       at = @At("HEAD"),
       order = 999)
   private void handleSystemMessagePre(Component message, boolean isOverlay, CallbackInfo ci) {
-    if (!WynnrotConfig.meow() || WynnrotConfig.meowChance() == 0) return;
+    if (!MixinUtils.onWynncraft() || !WynnrotConfig.meow() || WynnrotConfig.meowChance() == 0) {
+      return;
+    }
 
     if (message.getString().toLowerCase(Locale.ROOT).contains("meow")
         && RANDOM.nextInt(100) < WynnrotConfig.meowChance()) {
