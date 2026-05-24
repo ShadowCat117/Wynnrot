@@ -110,7 +110,7 @@ public record Fonts(Identifier identifier, List<String> characters) {
             Map.entry("\uE2C5", "\uDB00\uDC01"), // Unverified
             Map.entry("\uE2C6", "\uDAFF\uDFFD"), // Unverified
             Map.entry("\uE2C7", "\uDB00\uDC01"), // Unverified
-            Map.entry("\uE2C9", "\uDAFF\uDFFE"));// Unverified
+            Map.entry("\uE2C9", "\uDAFF\uDFFE")); // Unverified
 
     // Then we need to fill in the end with the same principal. If the original sprite goes all the
     // way to the end of
@@ -193,5 +193,5 @@ public record Fonts(Identifier identifier, List<String> characters) {
             Map.entry("\uE2C6", "\uDB00\uDC03"), // Unverified
             Map.entry("\uE2C7", "\uDB00\uDC01"), // Unverified
             Map.entry("\uE2C8", "\uDB00\uDC02"), // Unverified
-            Map.entry("\uE2C9", "\uDB00\uDC03"));// Unverified
+            Map.entry("\uE2C9", "\uDB00\uDC03")); // Unverified
 }
