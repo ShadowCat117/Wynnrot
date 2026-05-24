@@ -38,4 +38,12 @@ public class Wynnrot implements ModInitializer {
     public static void error(String message, Object arg) {
         LOGGER.error(message, arg);
     }
+
+    public static String toEscapedUnicode(String s) {
+        StringBuilder out = new StringBuilder();
+        for (char c : s.toCharArray()) {
+            out.append(String.format("\\u%04X", (int) c));
+        }
+        return out.toString();
+    }
 }

@@ -81,11 +81,11 @@ public record Fonts(Identifier identifier, List<String> characters) {
             Map.entry("\uE2B7", "\uDB00\uDC01"),
             Map.entry("\uE2B8", "\uDB00\uDC02"),
             Map.entry("\uE2B9", "\uDB00\uDC03"),
-            Map.entry("\uE180", "\uDB00\uDC01"),
-            Map.entry("\uE184", "\uDB00\uDC02"),
+            Map.entry("\uE180", "\uDB00\uDC01"), // Verified
+            Map.entry("\uE184", "\uDB00\uDC02"), // Verified
             Map.entry("\uE186", "\uDB00\uDC01"), // Verified
             Map.entry("\uE187", "\uDB00\uDC01"), // Verified
-            Map.entry("\uE189", "\uDAFF\uDFFE"),
+            Map.entry("\uE189", "\uDAFF\uDFFE"), // Verified
             Map.entry("\uE18D", "\uDB00\uDC01"),
             Map.entry("\uE18E", "\uDB00\uDC01"),
             Map.entry("\uE18F", "\uDB00\uDC01"),
@@ -149,16 +149,15 @@ public record Fonts(Identifier identifier, List<String> characters) {
             Map.entry("\uE2B6", "\uDAFF\uDFFD"),
             Map.entry("\uE2B7", "\uDB00\uDC01"),
             Map.entry("\uE2B9", "\uDAFF\uDFFE"),
-            Map.entry("\uE180", "\uDAFF\uDFFF"),
-            Map.entry("\uE181", "\uDAFF\uDFFF"),
+            Map.entry("\uE180", "\uDB00\uDC01"), // Verified
+            Map.entry("\uE181", "\uDB00\uDC01"), // Verified
             Map.entry("\uE182", "\uDB00\uDC02"), // Verified
-            Map.entry("\uE183", "\uDB00\uDC02"),
-            Map.entry("\uE184", "\uDAFF\uDFFE"),
-            Map.entry("\uE185", "\uDB00\uDC02"),
+            Map.entry("\uE183", "\uDB00\uDC02"), // Verified
+            Map.entry("\uE185", "\uDB00\uDC02"), // Verified
             Map.entry("\uE186", "\uDB00\uDC01"), // Verified
             Map.entry("\uE187", "\uDB00\uDC01"), // Verified
             Map.entry("\uE188", "\uDB00\uDC02"), // Verified
-            Map.entry("\uE189", "\uDB00\uDC04"),
+            Map.entry("\uE189", "\uDB00\uDC04"), // Verified
             Map.entry("\uE18C", "\uDB00\uDC02"),
             Map.entry("\uE18D", "\uDB00\uDC01"),
             Map.entry("\uE18E", "\uDB00\uDC01"),
