@@ -86,31 +86,31 @@ public record Fonts(Identifier identifier, List<String> characters) {
             Map.entry("\uE186", "\uDB00\uDC01"), // Verified
             Map.entry("\uE187", "\uDB00\uDC01"), // Verified
             Map.entry("\uE189", "\uDAFF\uDFFE"), // Verified
-            Map.entry("\uE18D", "\uDB00\uDC01"),
-            Map.entry("\uE18E", "\uDB00\uDC01"),
-            Map.entry("\uE18F", "\uDB00\uDC01"),
-            Map.entry("\uE2A0", "\uDAFF\uDFFF"),
-            Map.entry("\uE2A1", "\uDAFF\uDFFE"),
-            Map.entry("\uE2A2", "\uDAFF\uDFFF"),
-            Map.entry("\uE2A3", "\uDB00\uDC01"),
-            Map.entry("\uE2A5", "\uDAFF\uDFFE"),
-            Map.entry("\uE2A7", "\uDAFF\uDFFF"),
-            Map.entry("\uE2A8", "\uDAFF\uDFFD"),
-            Map.entry("\uE2A9", "\uDB00\uDC01"),
-            Map.entry("\uE2AA", "\uDB00\uDC01"),
-            Map.entry("\uE2AB", "\uDAFF\uDFFF"),
-            Map.entry("\uE2AC", "\uDB00\uDC01"),
-            Map.entry("\uE2AD", "\uDB00\uDC01"),
-            Map.entry("\uE2AE", "\uDB00\uDC01"),
-            Map.entry("\uE2AF", "\uDAFF\uDFFF"),
-            Map.entry("\uE2C0", "\uDAFF\uDFFE"),
-            Map.entry("\uE2C1", "\uDAFF\uDFFF"),
-            Map.entry("\uE2C2", "\uDB00\uDC01"),
-            Map.entry("\uE2C4", "\uDB00\uDC01"),
-            Map.entry("\uE2C5", "\uDB00\uDC01"),
-            Map.entry("\uE2C6", "\uDAFF\uDFFD"),
-            Map.entry("\uE2C7", "\uDB00\uDC01"),
-            Map.entry("\uE2C9", "\uDAFF\uDFFE"));
+            Map.entry("\uE18D", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE18E", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE18F", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE2A0", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE2A1", "\uDAFF\uDFFE"), // Unverified
+            Map.entry("\uE2A2", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE2A3", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE2A5", "\uDAFF\uDFFE"), // Unverified
+            Map.entry("\uE2A7", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE2A8", "\uDAFF\uDFFD"), // Unverified
+            Map.entry("\uE2A9", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE2AA", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE2AB", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE2AC", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE2AD", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE2AE", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE2AF", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE2C0", "\uDAFF\uDFFE"), // Unverified
+            Map.entry("\uE2C1", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE2C2", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE2C4", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE2C5", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE2C6", "\uDAFF\uDFFD"), // Unverified
+            Map.entry("\uE2C7", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE2C9", "\uDAFF\uDFFE"));// Unverified
 
     // Then we need to fill in the end with the same principal. If the original sprite goes all the
     // way to the end of
@@ -158,30 +158,34 @@ public record Fonts(Identifier identifier, List<String> characters) {
             Map.entry("\uE187", "\uDB00\uDC01"), // Verified
             Map.entry("\uE188", "\uDB00\uDC02"), // Verified
             Map.entry("\uE189", "\uDB00\uDC04"), // Verified
-            Map.entry("\uE18C", "\uDB00\uDC02"),
-            Map.entry("\uE18D", "\uDB00\uDC01"),
-            Map.entry("\uE18E", "\uDB00\uDC01"),
-            Map.entry("\uE18F", "\uDB00\uDC01"),
-            Map.entry("\uE2A0", "\uDB00\uDC02"),
-            Map.entry("\uE2A4", "\uDB00\uDC01"),
-            Map.entry("\uE2A6", "\uDB00\uDC02"),
-            Map.entry("\uE2A7", "\uDB00\uDC02"),
-            Map.entry("\uE2A8", "\uDB00\uDC05"),
-            Map.entry("\uE2A9", "\uDB00\uDC01"),
-            Map.entry("\uE2AA", "\uDB00\uDC01"),
-            Map.entry("\uE2AB", "\uDB00\uDC02"),
-            Map.entry("\uE2AC", "\uDB00\uDC01"),
-            Map.entry("\uE2AD", "\uDB00\uDC01"),
-            Map.entry("\uE2AE", "\uDB00\uDC01"),
-            Map.entry("\uE2AF", "\uDB00\uDC02"),
-            Map.entry("\uE2C0", "\uDB00\uDC04"),
-            Map.entry("\uE2C1", "\uDB00\uDC02"),
-            Map.entry("\uE2C2", "\uDB00\uDC01"),
-            Map.entry("\uE2C3", "\uDB00\uDC02"),
-            Map.entry("\uE2C4", "\uDB00\uDC01"),
-            Map.entry("\uE2C5", "\uDB00\uDC01"),
-            Map.entry("\uE2C6", "\uDB00\uDC02"),
-            Map.entry("\uE2C7", "\uDB00\uDC01"),
-            Map.entry("\uE2C8", "\uDB00\uDC02"),
-            Map.entry("\uE2C9", "\uDB00\uDC03"));
+            Map.entry("\uE18C", "\uDB00\uDC02"), // Unverified
+            Map.entry("\uE18D", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE18E", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE18F", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE2A0", "\uDB00\uDC03"), // Unverified
+            Map.entry("\uE2A1", "\uDB00\uDC04"), // Unverified
+            Map.entry("\uE2A2", "\uDB00\uDC03"), // Unverified
+            Map.entry("\uE2A3", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE2A4", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE2A5", "\uDB00\uDC02"), // Unverified
+            Map.entry("\uE2A6", "\uDB00\uDC02"), // Unverified
+            Map.entry("\uE2A7", "\uDB00\uDC02"), // Unverified
+            Map.entry("\uE2A8", "\uDB00\uDC03"), // Unverified
+            Map.entry("\uE2A9", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE2AA", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE2AB", "\uDB00\uDC02"), // Unverified
+            Map.entry("\uE2AC", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE2AD", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE2AE", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE2AF", "\uDB00\uDC03"), // Unverified
+            Map.entry("\uE2C0", "\uDB00\uDC04"), // Unverified
+            Map.entry("\uE2C1", "\uDB00\uDC02"), // Unverified
+            Map.entry("\uE2C2", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE2C3", "\uDB00\uDC02"), // Unverified
+            Map.entry("\uE2C4", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE2C5", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE2C6", "\uDB00\uDC03"), // Unverified
+            Map.entry("\uE2C7", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE2C8", "\uDB00\uDC02"), // Unverified
+            Map.entry("\uE2C9", "\uDB00\uDC03"));// Unverified
 }
