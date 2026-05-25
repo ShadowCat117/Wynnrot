@@ -37,7 +37,9 @@ public final class ActionBarUtils {
 
                         copy.append(Component.literal(replacementCharacter).withStyle(style.withFont(replacementFont)));
 
-                        Wynnrot.info("Replacing " + Wynnrot.toEscapedUnicode(text));
+                        if (Fonts.unverifiedChars.contains(text)) {
+                            Wynnrot.info("Unverified " + Wynnrot.toEscapedUnicode(text));
+                        }
 
                         String suffix = Fonts.SUFFIX_OFFSETS.getOrDefault(text, "");
                         if (!suffix.isEmpty()) {
