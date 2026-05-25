@@ -47,40 +47,40 @@ public record Fonts(Identifier identifier, List<String> characters) {
     public static Map<String, String> PREFIX_OFFSETS = Map.ofEntries(
             Map.entry("\uE170", "\uDAFF\uDFFF"), // Unverified
             Map.entry("\uE171", "\uDAFF\uDFFF"), // Unverified
-            Map.entry("\uE172", "\uDB00\uDC00"), // Unverified
-            Map.entry("\uE173", "\uDB00\uDC00"), // Unverified
-            Map.entry("\uE174", "\uDAFF\uDFFD"), // Unverified
-            Map.entry("\uE175", "\uDB00\uDC00"), // Unverified
+            Map.entry("\uE172", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE173", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE174", "\uDAFF\uDFFC"), // Unverified
+            Map.entry("\uE175", "\uDB00\uDC01"), // Unverified
             Map.entry("\uE176", "\uDAFF\uDFFF"), // Unverified
             Map.entry("\uE177", "\uDAFF\uDFFF"), // Unverified
-            Map.entry("\uE178", "\uDB00\uDC00"), // Unverified
-            Map.entry("\uE179", "\uDB00\uDC02"), // Unverified
-            Map.entry("\uE17C", "\uDB00\uDC00"), // Unverified
+            Map.entry("\uE178", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE179", "\uDB00\uDC03"), // Unverified
+            Map.entry("\uE17C", "\uDB00\uDC01"), // Unverified
             Map.entry("\uE17D", "\uDAFF\uDFFF"), // Unverified
             Map.entry("\uE17E", "\uDAFF\uDFFF"), // Unverified
             Map.entry("\uE17F", "\uDAFF\uDFFF"), // Unverified
-            Map.entry("\uE290", "\uDB00\uDC00"), // Unverified
-            Map.entry("\uE294", "\uDB00\uDC01"), // Unverified
-            Map.entry("\uE296", "\uDB00\uDC00"), // Unverified
-            Map.entry("\uE297", "\uDB00\uDC00"), // Unverified
-            Map.entry("\uE298", "\uDAFF\uDFFB"), // Unverified
+            Map.entry("\uE290", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE294", "\uDB00\uDC00"), // Unverified
+            Map.entry("\uE296", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE297", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE298", "\uDAFF\uDFFA"), // Unverified
             Map.entry("\uE299", "\uDAFF\uDFFF"), // Unverified
             Map.entry("\uE29A", "\uDAFF\uDFFF"), // Unverified
-            Map.entry("\uE29B", "\uDB00\uDC00"), // Unverified
+            Map.entry("\uE29B", "\uDB00\uDC01"), // Unverified
             Map.entry("\uE29C", "\uDAFF\uDFFF"), // Unverified
             Map.entry("\uE29D", "\uDAFF\uDFFF"), // Unverified
             Map.entry("\uE29E", "\uDAFF\uDFFF"), // Unverified
-            Map.entry("\uE29F", "\uDB00\uDC00"), // Unverified
-            Map.entry("\uE2B0", "\uDB00\uDC02"), // Unverified
-            Map.entry("\uE2B1", "\uDB00\uDC00"), // Unverified
+            Map.entry("\uE29F", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE2B0", "\uDB00\uDC03"), // Unverified
+            Map.entry("\uE2B1", "\uDB00\uDC01"), // Unverified
             Map.entry("\uE2B2", "\uDAFF\uDFFF"), // Unverified
-            Map.entry("\uE2B3", "\uDB00\uDC00"), // Unverified
+            Map.entry("\uE2B3", "\uDB00\uDC01"), // Unverified
             Map.entry("\uE2B4", "\uDAFF\uDFFF"), // Unverified
             Map.entry("\uE2B5", "\uDAFF\uDFFF"), // Unverified
-            Map.entry("\uE2B6", "\uDB00\uDC00"), // Unverified
+            Map.entry("\uE2B6", "\uDB00\uDC01"), // Unverified
             Map.entry("\uE2B7", "\uDAFF\uDFFF"), // Unverified
-            Map.entry("\uE2B8", "\uDB00\uDC00"), // Unverified
-            Map.entry("\uE2B9", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE2B8", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE2B9", "\uDB00\uDC02"), // Unverified
             Map.entry("\uE180", "\uDB00\uDC01"), // Verified 4:0
             Map.entry("\uE184", "\uDB00\uDC02"), // Verified 5:0
             Map.entry("\uE186", "\uDB00\uDC01"), // Verified 4:0
@@ -119,42 +119,42 @@ public record Fonts(Identifier identifier, List<String> characters) {
     // gap, but we already
     // added 1 in the prefix, we only need to add 1 here instead of 2.
     public static Map<String, String> SUFFIX_OFFSETS = Map.ofEntries(
-            Map.entry("\uE170", "\uDB00\uDC03"), // Unverified
-            Map.entry("\uE171", "\uDB00\uDC02"), // Unverified
-            Map.entry("\uE172", "\uDB00\uDC03"), // Unverified
-            Map.entry("\uE173", "\uDB00\uDC03"), // Unverified
-            Map.entry("\uE174", "\uDB00\uDC05"), // Unverified
-            Map.entry("\uE175", "\uDB00\uDC03"), // Unverified
-            Map.entry("\uE176", "\uDB00\uDC03"), // Unverified
-            Map.entry("\uE177", "\uDB00\uDC03"), // Unverified
-            Map.entry("\uE178", "\uDB00\uDC03"), // Unverified
-            Map.entry("\uE179", "\uDB00\uDC01"), // Unverified
-            Map.entry("\uE17C", "\uDB00\uDC03"), // Unverified
-            Map.entry("\uE17D", "\uDB00\uDC03"), // Unverified
-            Map.entry("\uE17E", "\uDB00\uDC03"), // Unverified
-            Map.entry("\uE17F", "\uDB00\uDC03"), // Unverified
-            Map.entry("\uE290", "\uDB00\uDC02"), // Unverified
-            Map.entry("\uE294", "\uDB00\uDC01"), // Unverified
-            Map.entry("\uE296", "\uDB00\uDC02"), // Unverified
-            Map.entry("\uE297", "\uDB00\uDC02"), // Unverified
+            Map.entry("\uE170", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE171", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE172", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE173", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE174", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE175", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE176", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE177", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE178", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE179", "\uDAFF\uDFFE"), // Unverified
+            Map.entry("\uE17C", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE17D", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE17E", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE17F", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE290", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE294", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE296", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE297", "\uDAFF\uDFFF"), // Unverified
             Map.entry("\uE298", "\uDB00\uDC00"), // Unverified
-            Map.entry("\uE299", "\uDB00\uDC03"), // Unverified
-            Map.entry("\uE29A", "\uDB00\uDC03"), // Unverified
-            Map.entry("\uE29B", "\uDB00\uDC02"), // Unverified
-            Map.entry("\uE29C", "\uDB00\uDC03"), // Unverified
-            Map.entry("\uE29D", "\uDB00\uDC03"), // Unverified
-            Map.entry("\uE29E", "\uDB00\uDC03"), // Unverified
-            Map.entry("\uE29F", "\uDB00\uDC02"), // Unverified
-            Map.entry("\uE2B0", "\uDB00\uDC01"), // Unverified
-            Map.entry("\uE2B1", "\uDB00\uDC02"), // Unverified
-            Map.entry("\uE2B2", "\uDB00\uDC03"), // Unverified
-            Map.entry("\uE2B3", "\uDB00\uDC02"), // Unverified
-            Map.entry("\uE2B4", "\uDB00\uDC03"), // Unverified
-            Map.entry("\uE2B5", "\uDB00\uDC03"), // Unverified
-            Map.entry("\uE2B6", "\uDB00\uDC02"), // Unverified
-            Map.entry("\uE2B7", "\uDB00\uDC03"), // Unverified
-            Map.entry("\uE2B8", "\uDB00\uDC02"), // Unverified
-            Map.entry("\uE2B9", "\uDB00\uDC01"), // Unverified
+            Map.entry("\uE299", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE29A", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE29B", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE29C", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE29D", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE29E", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE29F", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE2B0", "\uDAFF\uDFFE"), // Unverified
+            Map.entry("\uE2B1", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE2B2", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE2B3", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE2B4", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE2B5", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE2B6", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE2B7", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE2B8", "\uDAFF\uDFFF"), // Unverified
+            Map.entry("\uE2B9", "\uDAFF\uDFFE"), // Unverified
             Map.entry("\uE180", "\uDB00\uDC01"), // Verified 4:0
             Map.entry("\uE181", "\uDB00\uDC01"), // Verified 3:1
             Map.entry("\uE182", "\uDB00\uDC02"), // Verified 3:0
