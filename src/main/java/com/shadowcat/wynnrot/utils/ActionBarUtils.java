@@ -6,7 +6,6 @@
  */
 package com.shadowcat.wynnrot.utils;
 
-import com.shadowcat.wynnrot.Wynnrot;
 import com.shadowcat.wynnrot.data.Fonts;
 import java.util.List;
 import java.util.Optional;
@@ -36,10 +35,6 @@ public final class ActionBarUtils {
                         }
 
                         copy.append(Component.literal(replacementCharacter).withStyle(style.withFont(replacementFont)));
-
-                        if (Fonts.unverifiedChars.contains(text)) {
-                            Wynnrot.info("Unverified " + Wynnrot.toEscapedUnicode(text));
-                        }
 
                         String suffix = Fonts.SUFFIX_OFFSETS.getOrDefault(text, "");
                         if (!suffix.isEmpty()) {
