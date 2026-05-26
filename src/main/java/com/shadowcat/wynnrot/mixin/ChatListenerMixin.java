@@ -54,14 +54,6 @@ public class ChatListenerMixin {
         if (WynnrotConfig.eternalHungerSui()) {
             newComponent = ActionBarUtils.replaceCharactersAnimated(
                     newComponent,
-                    Fonts.RIGHT_SUI.characters(),
-                    Fonts.RIGHT_SUI_EATING.characters(),
-                    WynnrotConfig.eternalHungerSuiUpdateRate(),
-                    Fonts.RIGHT_SUI.identifier(),
-                    new FontDescription.Resource(Fonts.RIGHT_SUI_EATING.identifier()));
-
-            newComponent = ActionBarUtils.replaceCharactersAnimated(
-                    newComponent,
                     Fonts.LEFT_SUI.characters(),
                     Fonts.LEFT_SUI_EATING.characters(),
                     WynnrotConfig.eternalHungerSuiUpdateRate(),
