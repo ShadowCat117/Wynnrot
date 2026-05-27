@@ -91,10 +91,10 @@ public class ModMenuIntegration implements ModMenuApi {
 
             titles.addEntry(entryBuilder
                     .startBooleanToggle(
-                            Component.translatable("wynnrot.config.leBigFish.name"), WynnrotConfig.leBigFish())
+                            Component.translatable("wynnrot.config.leBigFishe.name"), WynnrotConfig.leBigFishe())
                     .setDefaultValue(true)
-                    .setTooltip(Component.translatable("wynnrot.config.leBigFish.description"))
-                    .setSaveConsumer(WynnrotConfig::updateLeBigFish)
+                    .setTooltip(Component.translatable("wynnrot.config.leBigFishe.description"))
+                    .setSaveConsumer(WynnrotConfig::updateLeBigFishe)
                     .build());
             // endregion
 

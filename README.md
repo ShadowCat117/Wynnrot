@@ -11,8 +11,8 @@ Wynncraft QoL mods? Never heard of them, it's time for some stupid changes
   - Replaces all of Sui's portraits with the eating portraits
 - Meow
   - Plays a random Minecraft cat sound when a chat message contains the word "meow"
-- Le Big Fish
-  - Replaces the "The Piranha" title in Galleon's Graveyard with "Le Big Fish" and the same for the Corrupted version
+- Le Big Fishe
+  - Replaces the "The Piranha" title in Galleon's Graveyard with "Le Big Fishe" and the same for the Corrupted version
 
 <img src="https://raw.githubusercontent.com/ShadowCat117/ShadowCat117.github.io/refs/heads/main/Resources/Wynnrot/HungrySui.gif" alt="Sui Eating">
 
@@ -20,4 +20,4 @@ Wynncraft QoL mods? Never heard of them, it's time for some stupid changes
 - More dumb stuff
   - Feel free to suggest anything by opening an issue
  
-<img src="https://raw.githubusercontent.com/ShadowCat117/ShadowCat117.github.io/refs/heads/main/Resources/Wynnrot/LeBigFish.png" alt="Le Big Fish title">
+<img src="https://raw.githubusercontent.com/ShadowCat117/ShadowCat117.github.io/refs/heads/main/Resources/Wynnrot/LeBigFishe.png" alt="Le Big Fishe title">

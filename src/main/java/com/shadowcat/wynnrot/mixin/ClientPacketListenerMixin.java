@@ -21,7 +21,7 @@ import org.spongepowered.asm.mixin.Mixin;
 public class ClientPacketListenerMixin {
     @WrapMethod(method = "setTitleText(Lnet/minecraft/network/protocol/game/ClientboundSetTitleTextPacket;)V")
     private void wrapSetTitleText(ClientboundSetTitleTextPacket packet, Operation<Void> original) {
-        if (!MixinUtils.onWynncraft() || !WynnrotConfig.leBigFish()) {
+        if (!MixinUtils.onWynncraft() || !WynnrotConfig.leBigFishe()) {
             original.call(packet);
             return;
         }
@@ -30,9 +30,9 @@ public class ClientPacketListenerMixin {
 
         String plainText = ChatFormatting.stripFormatting(component.getString());
         if (plainText.equals("The Piranha") || plainText.equals("The Corrupted Piranha")) {
-            String bigFishText = plainText.contains("Corrupted") ? "Le Corrupted Big Fish" : "Le Big Fish";
+            String bigFisheText = plainText.contains("Corrupted") ? "Le Corrupted Big Fishe" : "Le Big Fishe";
             ClientboundSetTitleTextPacket newPacket = new ClientboundSetTitleTextPacket(
-                    Component.literal(bigFishText).withColor(0x00f010));
+                    Component.literal(bigFisheText).withColor(0x00f010));
 
             original.call(newPacket);
         } else {
@@ -42,7 +42,7 @@ public class ClientPacketListenerMixin {
 
     @WrapMethod(method = "setSubtitleText(Lnet/minecraft/network/protocol/game/ClientboundSetSubtitleTextPacket;)V")
     private void wrapSetTitleText(ClientboundSetSubtitleTextPacket packet, Operation<Void> original) {
-        if (!MixinUtils.onWynncraft() || !WynnrotConfig.leBigFish()) {
+        if (!MixinUtils.onWynncraft() || !WynnrotConfig.leBigFishe()) {
             original.call(packet);
             return;
         }
@@ -51,9 +51,9 @@ public class ClientPacketListenerMixin {
 
         String plainText = ChatFormatting.stripFormatting(component.getString());
         if (plainText.equals("The Piranha") || plainText.equals("The Corrupted Piranha")) {
-            String bigFishText = plainText.contains("Corrupted") ? "Le Corrupted Big Fish" : "Le Big Fish";
+            String bigFisheText = plainText.contains("Corrupted") ? "Le Corrupted Big Fishe" : "Le Big Fishe";
             ClientboundSetSubtitleTextPacket newPacket = new ClientboundSetSubtitleTextPacket(
-                    Component.literal(bigFishText).withColor(0x00f010));
+                    Component.literal(bigFisheText).withColor(0x00f010));
 
             original.call(newPacket);
         } else {

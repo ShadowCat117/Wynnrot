@@ -26,7 +26,7 @@ public class WynnrotConfig {
         int eternalHungerSuiUpdateRate = 4;
         boolean meow = true;
         int meowChance = 100;
-        boolean leBigFish = true;
+        boolean leBigFishe = true;
     }
 
     public static void init() {
@@ -91,12 +91,12 @@ public class WynnrotConfig {
         saveConfig();
     }
 
-    public static boolean leBigFish() {
-        return config.leBigFish;
+    public static boolean leBigFishe() {
+        return config.leBigFishe;
     }
 
-    public static void updateLeBigFish(boolean value) {
-        config.leBigFish = value;
+    public static void updateLeBigFishe(boolean value) {
+        config.leBigFishe = value;
         saveConfig();
     }
 
