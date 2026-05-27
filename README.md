@@ -14,8 +14,10 @@ Wynncraft QoL mods? Never heard of them, time for some stupid changes
 - Le Big Fish
   - Replaces the "The Piranha" title in Galleon's Graveyard with "Le Big Fish" and the same for the Corrupted version
 
-<img src="https://raw.githubusercontent.com/ShadowCat117/ShadowCat117.github.io/refs/heads/main/Resources/Wynnrot/LeBigFish.png" alt="Le Big Fish title">
+<img src="https://raw.githubusercontent.com/ShadowCat117/ShadowCat117.github.io/refs/heads/main/Resources/Wynnrot/HungrySui.gif" alt="Sui Eating">
 
 ## Future Features
 - More dumb stuff
   - Feel free to suggest anything by opening an issue
+ 
+<img src="https://raw.githubusercontent.com/ShadowCat117/ShadowCat117.github.io/refs/heads/main/Resources/Wynnrot/LeBigFish.png" alt="Le Big Fish title">
