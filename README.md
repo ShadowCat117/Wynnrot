@@ -1,6 +1,6 @@
 # Wynnrot
 
-Wynncraft QoL mods? Never heard of them, time for some stupid changes
+Wynncraft QoL mods? Never heard of them, it's time for some stupid changes
 
 <img src="https://raw.githubusercontent.com/ShadowCat117/ShadowCat117.github.io/refs/heads/main/Resources/Wynnrot/Queen67.gif" alt="A 67 Fruma Queen">
 
