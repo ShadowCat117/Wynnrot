@@ -21,18 +21,18 @@ public class ModMenuIntegration implements ModMenuApi {
                     ConfigBuilder.create().setParentScreen(parent).setTitle(Component.translatable("wynnrot.config"));
             ConfigEntryBuilder entryBuilder = configBuilder.entryBuilder();
 
-            // region Portraits
-            ConfigCategory portraits =
-                    configBuilder.getOrCreateCategory(Component.translatable("wynnrot.config.category.portraits"));
+            // region HUD
+            ConfigCategory hud =
+                    configBuilder.getOrCreateCategory(Component.translatable("wynnrot.config.category.hud"));
 
-            portraits.addEntry(entryBuilder
+            hud.addEntry(entryBuilder
                     .startBooleanToggle(
                             Component.translatable("wynnrot.config.sixSevenQueen.name"), WynnrotConfig.sixSevenQueen())
                     .setDefaultValue(true)
                     .setTooltip(Component.translatable("wynnrot.config.sixSevenQueen.description"))
                     .setSaveConsumer(WynnrotConfig::updateSixSevenQueen)
                     .build());
-            portraits.addEntry(entryBuilder
+            hud.addEntry(entryBuilder
                     .startIntSlider(
                             Component.translatable("wynnrot.config.sixSevenQueenUpdateRate.name"),
                             WynnrotConfig.sixSevenQueenUpdateRate(),
@@ -43,7 +43,7 @@ public class ModMenuIntegration implements ModMenuApi {
                     .setSaveConsumer(WynnrotConfig::updateSixSevenQueenUpdateRate)
                     .build());
 
-            portraits.addEntry(entryBuilder
+            hud.addEntry(entryBuilder
                     .startBooleanToggle(
                             Component.translatable("wynnrot.config.eternalHungerSui.name"),
                             WynnrotConfig.eternalHungerSui())
@@ -51,7 +51,7 @@ public class ModMenuIntegration implements ModMenuApi {
                     .setTooltip(Component.translatable("wynnrot.config.eternalHungerSui.description"))
                     .setSaveConsumer(WynnrotConfig::updateEternalHungerSui)
                     .build());
-            portraits.addEntry(entryBuilder
+            hud.addEntry(entryBuilder
                     .startIntSlider(
                             Component.translatable("wynnrot.config.eternalHungerSuiUpdateRate.name"),
                             WynnrotConfig.eternalHungerSuiUpdateRate(),
@@ -85,11 +85,11 @@ public class ModMenuIntegration implements ModMenuApi {
                     .build());
             // endregion
 
-            // region Titles
-            ConfigCategory titles =
-                    configBuilder.getOrCreateCategory(Component.translatable("wynnrot.config.category.titles"));
+            // region Mobs
+            ConfigCategory mobs =
+                    configBuilder.getOrCreateCategory(Component.translatable("wynnrot.config.category.mobs"));
 
-            titles.addEntry(entryBuilder
+            mobs.addEntry(entryBuilder
                     .startBooleanToggle(
                             Component.translatable("wynnrot.config.leBigFishe.name"), WynnrotConfig.leBigFishe())
                     .setDefaultValue(true)

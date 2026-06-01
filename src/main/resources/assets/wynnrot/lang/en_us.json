@@ -1,8 +1,8 @@
 {
   "wynnrot.config": "Wynnrot Configuration",
   "wynnrot.config.category.chat": "Chat",
-  "wynnrot.config.category.portraits": "Portraits",
-  "wynnrot.config.category.titles": "Titles",
+  "wynnrot.config.category.hud": "HUD",
+  "wynnrot.config.category.mobs": "Mobs",
   "wynnrot.config.eternalHungerSui.description": "Make Sui always eating",
   "wynnrot.config.eternalHungerSui.name": "Eternal Hunger Sui",
   "wynnrot.config.eternalHungerSuiUpdateRate.description": "After how many ticks should the portrait update?",
