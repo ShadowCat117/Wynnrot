@@ -15,7 +15,7 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.Identifier;
 
-public final class ActionBarUtils {
+public final class ComponentUtils {
     public static Component replaceCharacters(
             Component original,
             List<String> originalCharacters,

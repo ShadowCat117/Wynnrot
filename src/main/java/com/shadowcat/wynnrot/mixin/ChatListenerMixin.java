@@ -10,7 +10,7 @@ import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.shadowcat.wynnrot.config.WynnrotConfig;
 import com.shadowcat.wynnrot.data.Fonts;
-import com.shadowcat.wynnrot.utils.ActionBarUtils;
+import com.shadowcat.wynnrot.utils.ComponentUtils;
 import com.shadowcat.wynnrot.utils.McUtils;
 import com.shadowcat.wynnrot.utils.MixinUtils;
 import com.shadowcat.wynnrot.utils.SoundUtils;
@@ -42,7 +42,7 @@ public class ChatListenerMixin {
         Component newComponent = message;
 
         if (WynnrotConfig.sixSevenQueen()) {
-            newComponent = ActionBarUtils.replaceCharacterAnimated(
+            newComponent = ComponentUtils.replaceCharacterAnimated(
                     newComponent,
                     "\uE0D2",
                     Fonts.FRUMA_QUEEN_67.characters(),
@@ -52,7 +52,7 @@ public class ChatListenerMixin {
         }
 
         if (WynnrotConfig.eternalHungerSui()) {
-            newComponent = ActionBarUtils.replaceCharactersAnimated(
+            newComponent = ComponentUtils.replaceCharactersAnimated(
                     newComponent,
                     Fonts.LEFT_SUI.characters(),
                     Fonts.LEFT_SUI_EATING.characters(),
