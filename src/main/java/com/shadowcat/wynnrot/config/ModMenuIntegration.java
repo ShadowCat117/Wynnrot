@@ -61,6 +61,16 @@ public class ModMenuIntegration implements ModMenuApi {
                     .setTooltip(Component.translatable("wynnrot.config.eternalHungerSuiUpdateRate.description"))
                     .setSaveConsumer(WynnrotConfig::updateEternalHungerSuiUpdateRate)
                     .build());
+
+            hud.addEntry(entryBuilder
+                    .startEnumSelector(
+                            Component.translatable("wynnrot.config.rainbowText.name"),
+                            RainbowTextOptions.class,
+                            WynnrotConfig.rainbowText())
+                    .setDefaultValue(RainbowTextOptions.NONE)
+                    .setTooltip(Component.translatable("wynnrot.config.rainbowText.description"))
+                    .setSaveConsumer(WynnrotConfig::updateRainbowText)
+                    .build());
             // endregion
 
             // region Chat

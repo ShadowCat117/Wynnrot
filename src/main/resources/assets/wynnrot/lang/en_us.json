@@ -13,6 +13,8 @@
   "wynnrot.config.meow.name": "Meow",
   "wynnrot.config.meowChance.description": "Chance to play a cat noise when a chat message contains the word 'meow'",
   "wynnrot.config.meowChance.name": "Meow Chance",
+  "wynnrot.config.rainbowText.description": "What type of text should be rendered with the rainbow colour? HUD_ONLY replaces the custom Wynncraft HUD, ALL_TEXT replaces, well, all text in the game.",
+  "wynnrot.config.rainbowText.name": "Rainbow Text",
   "wynnrot.config.sixSevenQueen.description": "Replace the Fruma Queen portrait with the six seven variant",
   "wynnrot.config.sixSevenQueen.name": "Six Seven Queen",
   "wynnrot.config.sixSevenQueenUpdateRate.description": "After how many ticks should the portrait be updated?",

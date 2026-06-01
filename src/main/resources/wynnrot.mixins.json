@@ -3,6 +3,7 @@
 	"package": "com.shadowcat.wynnrot.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
+	  "BakedSheetGlyphMixin",
       "ChatListenerMixin",
       "ClientPacketListenerMixin"
 	],

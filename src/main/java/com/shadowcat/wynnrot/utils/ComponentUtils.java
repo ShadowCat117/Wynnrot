@@ -75,4 +75,18 @@ public final class ComponentUtils {
 
         return replaceCharacters(original, originalCharacters, replacementCharacter, originalFont, replacementFont);
     }
+
+    public static Component setColour(Component original, int colour) {
+        MutableComponent copy = Component.empty();
+
+        original.visit(
+                (style, text) -> {
+                    copy.append(Component.literal(text).withStyle(style.withColor(colour)));
+
+                    return Optional.empty();
+                },
+                Style.EMPTY);
+
+        return copy;
+    }
 }

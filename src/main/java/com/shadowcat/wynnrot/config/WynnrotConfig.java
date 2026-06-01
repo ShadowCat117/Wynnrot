@@ -27,6 +27,7 @@ public class WynnrotConfig {
         boolean meow = true;
         int meowChance = 100;
         boolean leBigFishe = true;
+        RainbowTextOptions rainbowText = RainbowTextOptions.NONE;
     }
 
     public static void init() {
@@ -97,6 +98,15 @@ public class WynnrotConfig {
 
     public static void updateLeBigFishe(boolean value) {
         config.leBigFishe = value;
+        saveConfig();
+    }
+
+    public static RainbowTextOptions rainbowText() {
+        return config.rainbowText;
+    }
+
+    public static void updateRainbowText(RainbowTextOptions value) {
+        config.rainbowText = value;
         saveConfig();
     }
 

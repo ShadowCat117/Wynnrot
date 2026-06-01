@@ -8,7 +8,9 @@ package com.shadowcat.wynnrot.mixin;
 
 import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.shadowcat.wynnrot.config.RainbowTextOptions;
 import com.shadowcat.wynnrot.config.WynnrotConfig;
+import com.shadowcat.wynnrot.data.Colours;
 import com.shadowcat.wynnrot.data.Fonts;
 import com.shadowcat.wynnrot.utils.ComponentUtils;
 import com.shadowcat.wynnrot.utils.McUtils;
@@ -59,6 +61,11 @@ public class ChatListenerMixin {
                     WynnrotConfig.eternalHungerSuiUpdateRate(),
                     Fonts.LEFT_SUI.identifier(),
                     new FontDescription.Resource(Fonts.LEFT_SUI_EATING.identifier()));
+        }
+
+        // No need to check for ALL_TEXT here as the mixin to handle that covers this
+        if (WynnrotConfig.rainbowText() == RainbowTextOptions.HUD_ONLY) {
+            newComponent = ComponentUtils.setColour(newComponent, Colours.RAINBOW);
         }
 
         original.call(newComponent, true);

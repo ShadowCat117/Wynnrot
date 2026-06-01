@@ -10,6 +10,8 @@ public final class MixinUtils {
     private static final String WYNNCRAFT_SERVER_BRAND = "Wynn";
 
     public static boolean onWynncraft() {
+        if (McUtils.serverBrand() == null) return false;
+
         return McUtils.serverBrand().equals(WYNNCRAFT_SERVER_BRAND);
     }
 }
