@@ -11,6 +11,7 @@ import com.shadowcat.wynnrot.data.Colours;
 import com.shadowcat.wynnrot.data.Fonts;
 import java.util.List;
 import java.util.Optional;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FontDescription;
 import net.minecraft.network.chat.MutableComponent;
@@ -96,7 +97,8 @@ public final class ComponentUtils {
 
         original.visit(
                 (style, text) -> {
-                    copy.append(Component.literal(text).withStyle(style.withColor(colour)));
+                    copy.append(Component.literal(ChatFormatting.stripFormatting(text))
+                            .withStyle(style.withColor(colour)));
 
                     return Optional.empty();
                 },
