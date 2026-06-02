@@ -13,6 +13,8 @@ Wynncraft QoL mods? Never heard of them, it's time for some stupid changes
   - Plays a random Minecraft cat sound when a chat message contains the word "meow"
 - Le Big Fishe
   - Replaces the "The Piranha" title in Galleon's Graveyard with "Le Big Fishe" and the same for the Corrupted version
+- Rainbow Text
+  - Render the custom Wynncraft HUD or all text with the rainbow colour
 
 <img src="https://raw.githubusercontent.com/ShadowCat117/ShadowCat117.github.io/refs/heads/main/Resources/Wynnrot/HungrySui.gif" alt="Sui Eating">
 
@@ -20,4 +22,8 @@ Wynncraft QoL mods? Never heard of them, it's time for some stupid changes
 - More dumb stuff
   - Feel free to suggest anything by opening an issue
  
+## Dependencies
+- [Cloth Config API](https://modrinth.com/mod/cloth-config) (Required)
+- [ModMenu](https://modrinth.com/mod/modmenu) (Optional)
+
 <img src="https://raw.githubusercontent.com/ShadowCat117/ShadowCat117.github.io/refs/heads/main/Resources/Wynnrot/LeBigFishe.png" alt="Le Big Fishe title">
