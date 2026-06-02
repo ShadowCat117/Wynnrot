@@ -18,5 +18,7 @@
   "wynnrot.config.sixSevenQueen.description": "Replace the Fruma Queen portrait with the six seven variant",
   "wynnrot.config.sixSevenQueen.name": "Six Seven Queen",
   "wynnrot.config.sixSevenQueenUpdateRate.description": "After how many ticks should the portrait be updated?",
-  "wynnrot.config.sixSevenQueenUpdateRate.name": "Six Seven Queen Update Rate"
+  "wynnrot.config.sixSevenQueenUpdateRate.name": "Six Seven Queen Update Rate",
+  "wynnrot.updateAvailable1": "Wynnrot %s is available. It may contains fixes or new very useful features.",
+  "wynnrot.updateAvailable2": "Get the new version here."
 }

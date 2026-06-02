@@ -9,6 +9,7 @@ package com.shadowcat.wynnrot.utils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientPacketListener;
 import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.network.chat.Component;
 
 public final class McUtils {
     public static Minecraft mc() {
@@ -25,5 +26,9 @@ public final class McUtils {
         if (clientPacketListener == null) return "";
 
         return clientPacketListener.serverBrand();
+    }
+
+    public static void sendWynnrotMessage(Component message) {
+        mc().getChatListener().handleSystemMessage(ComponentUtils.addWynnrotHeader(message), false);
     }
 }
