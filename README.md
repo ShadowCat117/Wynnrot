@@ -15,6 +15,8 @@ Wynncraft QoL mods? Never heard of them, it's time for some stupid changes
   - Replaces the "The Piranha" title in Galleon's Graveyard with "Le Big Fishe" and the same for the Corrupted version
 - Rainbow Text
   - Render the custom Wynncraft HUD or all text with the rainbow colour
+- Horse Death
+  - Plays the horse death sound when you die. Gets progressively louder everytime you die in the current session
 
 <img src="https://raw.githubusercontent.com/ShadowCat117/ShadowCat117.github.io/refs/heads/main/Resources/Wynnrot/HungrySui.gif" alt="Sui Eating">
 
