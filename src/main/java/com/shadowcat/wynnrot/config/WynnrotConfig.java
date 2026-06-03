@@ -27,7 +27,7 @@ public class WynnrotConfig {
         boolean meow = true;
         int meowChance = 100;
         boolean leBigFishe = true;
-        RainbowTextOptions rainbowText = RainbowTextOptions.NONE;
+        RainbowTextOptions rainbowText = RainbowTextOptions.HUD_ONLY;
         boolean horseDeath = true;
     }
 
