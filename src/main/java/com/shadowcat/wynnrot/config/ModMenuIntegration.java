@@ -73,17 +73,17 @@ public class ModMenuIntegration implements ModMenuApi {
                     .build());
             // endregion
 
-            // region Chat
-            ConfigCategory chat =
-                    configBuilder.getOrCreateCategory(Component.translatable("wynnrot.config.category.chat"));
+            // region Sounds
+            ConfigCategory sounds =
+                    configBuilder.getOrCreateCategory(Component.translatable("wynnrot.config.category.sounds"));
 
-            chat.addEntry(entryBuilder
+            sounds.addEntry(entryBuilder
                     .startBooleanToggle(Component.translatable("wynnrot.config.meow.name"), WynnrotConfig.meow())
                     .setDefaultValue(true)
                     .setTooltip(Component.translatable("wynnrot.config.meow.description"))
                     .setSaveConsumer(WynnrotConfig::updateMeow)
                     .build());
-            chat.addEntry(entryBuilder
+            sounds.addEntry(entryBuilder
                     .startIntSlider(
                             Component.translatable("wynnrot.config.meowChance.name"),
                             WynnrotConfig.meowChance(),
@@ -92,6 +92,14 @@ public class ModMenuIntegration implements ModMenuApi {
                     .setDefaultValue(100)
                     .setTooltip(Component.translatable("wynnrot.config.meowChance.description"))
                     .setSaveConsumer(WynnrotConfig::updateMeowChance)
+                    .build());
+
+            sounds.addEntry(entryBuilder
+                    .startBooleanToggle(
+                            Component.translatable("wynnrot.config.horseDeath.name"), WynnrotConfig.horseDeath())
+                    .setDefaultValue(true)
+                    .setTooltip(Component.translatable("wynnrot.config.horseDeath.description"))
+                    .setSaveConsumer(WynnrotConfig::updateHorseDeath)
                     .build());
             // endregion
 
