@@ -1,0 +1,11 @@
+accessWidener v2 named
+
+accessible class net/minecraft/network/protocol/game/ClientboundBossEventPacket$AddOperation
+accessible class net/minecraft/network/protocol/game/ClientboundBossEventPacket$Operation
+accessible class net/minecraft/network/protocol/game/ClientboundBossEventPacket$UpdateNameOperation
+accessible field net/minecraft/network/protocol/game/ClientboundBossEventPacket operation Lnet/minecraft/network/protocol/game/ClientboundBossEventPacket$Operation;
+accessible field net/minecraft/network/protocol/game/ClientboundBossEventPacket$AddOperation name Lnet/minecraft/network/chat/Component;
+accessible field net/minecraft/network/protocol/game/ClientboundBossEventPacket$UpdateNameOperation name Lnet/minecraft/network/chat/Component;
+accessible field net/minecraft/world/entity/Display$TextDisplay DATA_TEXT_ID Lnet/minecraft/network/syncher/EntityDataAccessor;
+mutable field net/minecraft/network/protocol/game/ClientboundBossEventPacket$AddOperation name Lnet/minecraft/network/chat/Component;
+mutable field net/minecraft/network/protocol/game/ClientboundBossEventPacket$UpdateNameOperation name Lnet/minecraft/network/chat/Component;

@@ -30,6 +30,10 @@ dependencies {
 	modCompileOnly "com.terraformersmc:modmenu:${project.modmenu_version}"
 }
 
+loom {
+	accessWidenerPath = file("src/main/resources/wynnrot.accesswidener")
+}
+
 spotless {
 	java {
 		target "src/**/*.java"

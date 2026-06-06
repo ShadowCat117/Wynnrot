@@ -107,6 +107,23 @@ public final class ComponentUtils {
         return copy;
     }
 
+    public static Component replaceFirstSibling(Component original, String newText) {
+        List<Component> siblings = original.getSiblings();
+
+        if (siblings.isEmpty()) return original;
+
+        MutableComponent rebuilt = Component.empty().withStyle(original.getStyle());
+
+        Component first = siblings.getFirst();
+        rebuilt.append(Component.literal(newText).withStyle(first.getStyle()));
+
+        for (int i = 1; i < siblings.size(); i++) {
+            rebuilt.append(siblings.get(i));
+        }
+
+        return rebuilt;
+    }
+
     public static Component addWynnrotHeader(Component component) {
         if (wynnrotHeader == null) {
             buildWynnrotHeader();

@@ -7,6 +7,7 @@
 package com.shadowcat.wynnrot.mixin;
 
 import com.shadowcat.wynnrot.config.WynnrotConfig;
+import com.shadowcat.wynnrot.utils.ComponentUtils;
 import com.shadowcat.wynnrot.utils.McUtils;
 import com.shadowcat.wynnrot.utils.MixinUtils;
 import java.util.UUID;
@@ -27,9 +28,12 @@ public abstract class BossHealthOverlayMixin {
     @Unique
     private float horseVolume = 1.0f;
 
-    @Inject(method = "update(Lnet/minecraft/network/protocol/game/ClientboundBossEventPacket;)V", at = @At("HEAD"))
+    @Inject(
+            method = "update(Lnet/minecraft/network/protocol/game/ClientboundBossEventPacket;)V",
+            at = @At("HEAD"),
+            order = 999)
     private void updatePre(ClientboundBossEventPacket packet, CallbackInfo ci) {
-        if (!MixinUtils.onWynncraft() || !WynnrotConfig.horseDeath()) return;
+        if (!MixinUtils.onWynncraft() || (!WynnrotConfig.horseDeath() && !WynnrotConfig.leBigFishe())) return;
 
         packet.dispatch(new ClientboundBossEventPacket.Handler() {
             @Override
@@ -51,5 +55,33 @@ public abstract class BossHealthOverlayMixin {
                 }
             }
         });
+
+        if (WynnrotConfig.leBigFishe()) {
+            ClientboundBossEventPacket.Operation operation = packet.operation;
+
+            if (operation instanceof ClientboundBossEventPacket.AddOperation addOperation) {
+                Component name = addOperation.name;
+                if (!name.getSiblings().isEmpty()) {
+                    Component mobName = name.getSiblings().getFirst();
+
+                    if (mobName.getString().equals("The Piranha")) {
+                        addOperation.name = ComponentUtils.replaceFirstSibling(addOperation.name, "Le Big Fishe");
+                    }
+                }
+                return;
+            }
+
+            if (operation instanceof ClientboundBossEventPacket.UpdateNameOperation updateOperation
+                    && !updateOperation.name.getSiblings().isEmpty()) {
+                Component name = updateOperation.name;
+                if (!name.getSiblings().isEmpty()) {
+                    Component mobName = name.getSiblings().getFirst();
+
+                    if (mobName.getString().equals("The Piranha")) {
+                        updateOperation.name = ComponentUtils.replaceFirstSibling(updateOperation.name, "Le Big Fishe");
+                    }
+                }
+            }
+        }
     }
 }
