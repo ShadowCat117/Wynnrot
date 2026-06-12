@@ -46,7 +46,7 @@ public class ChatListenerMixin {
         if (WynnrotConfig.sixSevenQueen()) {
             newComponent = ComponentUtils.replaceCharacterAnimated(
                     newComponent,
-                    "\uE0D2",
+                    "\uE0C2",
                     Fonts.FRUMA_QUEEN_67.characters(),
                     WynnrotConfig.sixSevenQueenUpdateRate(),
                     Identifier.withDefaultNamespace("hud/dialogue/portrait"),
@@ -56,11 +56,11 @@ public class ChatListenerMixin {
         if (WynnrotConfig.eternalHungerSui()) {
             newComponent = ComponentUtils.replaceCharactersAnimated(
                     newComponent,
-                    Fonts.LEFT_SUI.characters(),
-                    Fonts.LEFT_SUI_EATING.characters(),
+                    Fonts.SUI.characters(),
+                    Fonts.SUI_EATING.characters(),
                     WynnrotConfig.eternalHungerSuiUpdateRate(),
-                    Fonts.LEFT_SUI.identifier(),
-                    new FontDescription.Resource(Fonts.LEFT_SUI_EATING.identifier()));
+                    Fonts.SUI.identifier(),
+                    new FontDescription.Resource(Fonts.SUI_EATING.identifier()));
         }
 
         // No need to check for ALL_TEXT here as the mixin to handle that covers this

@@ -16,15 +16,15 @@ public record Fonts(Identifier identifier, List<String> characters) {
     public static final Fonts FRUMA_QUEEN_67 = new Fonts(
             Identifier.fromNamespaceAndPath("wynnrot", "hud/dialogue/portrait"),
             List.of("\uE000", "\uE001", "\uE002", "\uE003", "\uE004", "\uE005", "\uE006", "\uE007"));
-    public static final Fonts LEFT_SUI = new Fonts(
+    public static final Fonts SUI = new Fonts(
             PORTRAIT_FONT,
             List.of(
-                    "\uE180", "\uE181", "\uE182", "\uE183", "\uE184", "\uE185", "\uE186", "\uE187", "\uE188", "\uE189",
-                    "\uE18A", "\uE18B", "\uE18C", "\uE18D", "\uE18E", "\uE18F", "\uE2A0", "\uE2A1", "\uE2A2", "\uE2A3",
-                    "\uE2A4", "\uE2A5", "\uE2A6", "\uE2A7", "\uE2A8", "\uE2A9", "\uE2AA", "\uE2AB", "\uE2AC", "\uE2AD",
-                    "\uE2AE", "\uE2AF", "\uE2C0", "\uE2C1", "\uE2C2", "\uE2C3", "\uE2C4", "\uE2C5", "\uE2C6", "\uE2C7",
-                    "\uE2C8", "\uE2C9"));
-    public static final Fonts LEFT_SUI_EATING = new Fonts(PORTRAIT_FONT, List.of("\uE18A", "\uE18B"));
+                    "\uE170", "\uE171", "\uE172", "\uE173", "\uE174", "\uE175", "\uE176", "\uE177", "\uE178", "\uE179",
+                    "\uE17A", "\uE17B", "\uE180", "\uE181", "\uE182", "\uE183", "\uE184", "\uE185", "\uE186", "\uE187",
+                    "\uE188", "\uE189", "\uE18A", "\uE18B", "\uE18C", "\uE18D", "\uE18E", "\uE190", "\uE191", "\uE192",
+                    "\uE193", "\uE194", "\uE195", "\uE196", "\uE197", "\uE198", "\uE199", "\uE19A", "\uE19B", "\uE19C",
+                    "\uE19D", "\uE19E"));
+    public static final Fonts SUI_EATING = new Fonts(PORTRAIT_FONT, List.of("\uE17A", "\uE17B"));
 
     // TODO: Clean this up so it's not a massive hard coded map
     // When replacing a portrait, we need to make sure the "used" area of the sprite matches the
