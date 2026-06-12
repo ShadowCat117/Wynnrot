@@ -46,7 +46,7 @@ public class ChatListenerMixin {
         if (WynnrotConfig.sixSevenQueen()) {
             newComponent = ComponentUtils.replaceCharacterAnimated(
                     newComponent,
-                    "\uE0C2",
+                    "\uE0D2",
                     Fonts.FRUMA_QUEEN_67.characters(),
                     WynnrotConfig.sixSevenQueenUpdateRate(),
                     Identifier.withDefaultNamespace("hud/dialogue/portrait"),
