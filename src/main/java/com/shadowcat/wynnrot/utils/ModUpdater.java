@@ -13,9 +13,11 @@ import com.shadowcat.wynnrot.Wynnrot;
 import com.shadowcat.wynnrot.data.Colours;
 import java.io.IOException;
 import java.net.URI;
+import java.net.URLEncoder;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.nio.charset.StandardCharsets;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 import java.util.regex.Matcher;
@@ -46,10 +48,11 @@ public final class ModUpdater {
         CompletableFuture.runAsync(() -> {
             try {
                 String mcVersion = SharedConstants.getCurrentVersion().name();
+                String encodedVersion = URLEncoder.encode("[\"" + mcVersion + "\"]", StandardCharsets.UTF_8);
 
                 URI uri = URI.create(
-                        "https://api.modrinth.com/v2/project/wynnrot/version?include_changelog=false&game_versions=%s"
-                                .formatted(mcVersion));
+                        "https://api.modrinth.com/v2/project/wynnrot/version?include_changelog=false&game_versions="
+                                + encodedVersion);
 
                 HttpRequest request = HttpRequest.newBuilder(uri).GET().build();
                 HttpResponse<String> response = HTTP_CLIENT.send(request, HttpResponse.BodyHandlers.ofString());
