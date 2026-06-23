@@ -23,6 +23,7 @@ import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FontDescription;
 import net.minecraft.resources.Identifier;
+import net.minecraft.sounds.SoundEvent;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -34,10 +35,10 @@ public class ChatListenerMixin {
     @Unique
     private static final Random RANDOM = new Random();
 
-    @WrapMethod(method = "handleSystemMessage(Lnet/minecraft/network/chat/Component;Z)V", order = 999)
-    private void wrapHandleSystemMessage(Component message, boolean isOverlay, Operation<Void> original) {
-        if (!MixinUtils.onWynncraft() || !isOverlay || !WynnrotConfig.editActionBar()) {
-            original.call(message, isOverlay);
+    @WrapMethod(method = "handleOverlay(Lnet/minecraft/network/chat/Component;)V", order = 999)
+    private void wrapHandleSystemMessage(Component message, Operation<Void> original) {
+        if (!MixinUtils.onWynncraft() || !WynnrotConfig.editActionBar()) {
+            original.call(message);
             return;
         }
 
@@ -68,20 +69,22 @@ public class ChatListenerMixin {
             newComponent = ComponentUtils.setColour(newComponent, Colours.RAINBOW);
         }
 
-        original.call(newComponent, true);
+        original.call(newComponent);
     }
 
     @Inject(method = "handleSystemMessage(Lnet/minecraft/network/chat/Component;Z)V", at = @At("HEAD"), order = 999)
-    private void handleSystemMessagePre(Component message, boolean isOverlay, CallbackInfo ci) {
+    private void handleSystemMessagePre(Component message, boolean remote, CallbackInfo ci) {
         if (!MixinUtils.onWynncraft() || !WynnrotConfig.meow() || WynnrotConfig.meowChance() == 0) {
             return;
         }
 
         if (message.getString().toLowerCase(Locale.ROOT).contains("meow")
                 && RANDOM.nextInt(100) < WynnrotConfig.meowChance()) {
-            McUtils.mc()
-                    .getSoundManager()
-                    .play(SimpleSoundInstance.forLocalAmbience(SoundUtils.getRandomCatSound(), 1.0f, 1.0f));
+            SoundEvent soundEvent = SoundUtils.getRandomCatSound();
+
+            if (soundEvent != null) {
+                McUtils.mc().getSoundManager().play(SimpleSoundInstance.forLocalAmbience(soundEvent, 1.0f, 1.0f));
+            }
         }
     }
 }

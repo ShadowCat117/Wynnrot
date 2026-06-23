@@ -29,6 +29,6 @@ public final class McUtils {
     }
 
     public static void sendWynnrotMessage(Component message) {
-        mc().getChatListener().handleSystemMessage(ComponentUtils.addWynnrotHeader(message), false);
+        mc().gui.chatListener().handleSystemMessage(ComponentUtils.addWynnrotHeader(message), false);
     }
 }

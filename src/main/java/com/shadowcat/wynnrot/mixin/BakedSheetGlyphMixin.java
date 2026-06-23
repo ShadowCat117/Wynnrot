@@ -20,9 +20,9 @@ public class BakedSheetGlyphMixin {
 
     @ModifyVariable(
             method =
-                    "renderChar(Lnet/minecraft/client/gui/font/glyphs/BakedSheetGlyph$GlyphInstance;Lorg/joml/Matrix4f;Lcom/mojang/blaze3d/vertex/VertexConsumer;IZ)V",
+                    "renderChar(Lnet/minecraft/client/gui/font/glyphs/BakedSheetGlyph$GlyphInstance;Lorg/joml/Matrix4fc;Lcom/mojang/blaze3d/vertex/VertexConsumer;IZ)V",
             at = @At("STORE"),
-            ordinal = 1)
+            name = "color")
     private int modifyMainColor(int color) {
         if (MixinUtils.onWynncraft() && WynnrotConfig.rainbowText() == RainbowTextOptions.ALL_TEXT) {
             return Colours.RAINBOW;
