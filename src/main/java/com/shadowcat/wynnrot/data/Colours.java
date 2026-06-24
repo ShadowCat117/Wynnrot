@@ -15,5 +15,6 @@ public class Colours {
     // region Normal colours
     public static final int CYAN = 0xFF00FFFF;
     public static final int DARK_CYAN = 0xFF008282;
+    public static final int WHITE = 0xFFFFFFFF;
     // endregion
 }

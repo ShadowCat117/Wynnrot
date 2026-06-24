@@ -11,7 +11,7 @@ import java.util.Map;
 import net.minecraft.resources.Identifier;
 
 public record Fonts(Identifier identifier, List<String> characters) {
-    private static final Identifier PORTRAIT_FONT = Identifier.withDefaultNamespace("hud/dialogue/portrait");
+    public static final Identifier PORTRAIT_FONT = Identifier.withDefaultNamespace("hud/dialogue/portrait");
 
     public static final Fonts FRUMA_QUEEN_67 = new Fonts(
             Identifier.fromNamespaceAndPath("wynnrot", "hud/dialogue/portrait"),
@@ -25,6 +25,8 @@ public record Fonts(Identifier identifier, List<String> characters) {
                     "\uE193", "\uE194", "\uE195", "\uE196", "\uE197", "\uE198", "\uE199", "\uE19A", "\uE19B", "\uE19C",
                     "\uE19D", "\uE19E"));
     public static final Fonts SUI_EATING = new Fonts(PORTRAIT_FONT, List.of("\uE17A", "\uE17B"));
+
+    public static final Fonts DANCING_QUEEN = new Fonts(PORTRAIT_FONT, List.of("\uE0D5", "\uE0DA", "\uE0DB", "\uE0DC"));
 
     // TODO: Clean this up so it's not a massive hard coded map
     // When replacing a portrait, we need to make sure the "used" area of the sprite matches the

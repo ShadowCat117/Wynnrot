@@ -12,6 +12,8 @@ import com.shadowcat.wynnrot.data.Fonts;
 import java.util.List;
 import java.util.Optional;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.DeltaTracker;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FontDescription;
 import net.minecraft.network.chat.MutableComponent;
@@ -122,6 +124,35 @@ public final class ComponentUtils {
         }
 
         return rebuilt;
+    }
+
+    public static void submitDancingQueen(GuiGraphics guiGraphics, DeltaTracker deltaTracker) {
+        float time = McUtils.tickCount() + deltaTracker.getGameTimeDeltaPartialTick(true);
+
+        List<String> frames = Fonts.DANCING_QUEEN.characters();
+        int frameIndex = ((int) (time / 5)) % frames.size();
+        String current = frames.get(frameIndex);
+
+        int width = guiGraphics.guiWidth();
+        int height = guiGraphics.guiHeight();
+
+        float speed = 100f;
+        float x = width - ((time * speed / 20f) % (width + 50));
+
+        float minY = 20;
+        float maxY = height - 20;
+        float amplitude = (maxY - minY) / 2f;
+        float centerY = minY + amplitude;
+
+        float frequency = 2.5f;
+        float y = centerY + (float) (Math.sin(time * frequency * 0.1f) * amplitude);
+
+        Component component = Component.literal(current)
+                .withStyle(Style.EMPTY
+                        .withFont(new FontDescription.Resource(Fonts.DANCING_QUEEN.identifier()))
+                        .withoutShadow());
+
+        GuiGraphicsUtils.submitText(guiGraphics, component, x, y, Colours.WHITE);
     }
 
     public static Component addWynnrotHeader(Component component) {

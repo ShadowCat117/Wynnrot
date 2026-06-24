@@ -6,7 +6,10 @@
  */
 package com.shadowcat.wynnrot.utils;
 
+import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.Font;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.multiplayer.ClientPacketListener;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.network.chat.Component;
@@ -18,6 +21,26 @@ public final class McUtils {
 
     public static LocalPlayer player() {
         return mc().player;
+    }
+
+    public static Font font() {
+        return mc().font;
+    }
+
+    public static boolean hudHidden() {
+        return mc().options.hideGui;
+    }
+
+    public static Screen screen() {
+        return mc().screen;
+    }
+
+    public static int tickCount() {
+        return player().tickCount;
+    }
+
+    public static DeltaTracker deltaTracker() {
+        return mc().getDeltaTracker();
     }
 
     public static String serverBrand() {

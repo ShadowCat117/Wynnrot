@@ -26,21 +26,13 @@ public class ModMenuIntegration implements ModMenuApi {
                     configBuilder.getOrCreateCategory(Component.translatable("wynnrot.config.category.hud"));
 
             hud.addEntry(entryBuilder
-                    .startBooleanToggle(
-                            Component.translatable("wynnrot.config.sixSevenQueen.name"), WynnrotConfig.sixSevenQueen())
-                    .setDefaultValue(true)
-                    .setTooltip(Component.translatable("wynnrot.config.sixSevenQueen.description"))
-                    .setSaveConsumer(WynnrotConfig::updateSixSevenQueen)
-                    .build());
-            hud.addEntry(entryBuilder
-                    .startIntSlider(
-                            Component.translatable("wynnrot.config.sixSevenQueenUpdateRate.name"),
-                            WynnrotConfig.sixSevenQueenUpdateRate(),
-                            1,
-                            100)
-                    .setDefaultValue(2)
-                    .setTooltip(Component.translatable("wynnrot.config.sixSevenQueenUpdateRate.description"))
-                    .setSaveConsumer(WynnrotConfig::updateSixSevenQueenUpdateRate)
+                    .startEnumSelector(
+                            Component.translatable("wynnrot.config.dancingQueen.name"),
+                            BouncingQueenOptions.class,
+                            WynnrotConfig.dancingQueen())
+                    .setDefaultValue(BouncingQueenOptions.EVERYWHERE)
+                    .setTooltip(Component.translatable("wynnrot.config.dancingQueen.description"))
+                    .setSaveConsumer(WynnrotConfig::updateDancingQueen)
                     .build());
 
             hud.addEntry(entryBuilder
@@ -67,9 +59,27 @@ public class ModMenuIntegration implements ModMenuApi {
                             Component.translatable("wynnrot.config.rainbowText.name"),
                             RainbowTextOptions.class,
                             WynnrotConfig.rainbowText())
-                    .setDefaultValue(RainbowTextOptions.NONE)
+                    .setDefaultValue(RainbowTextOptions.HUD_ONLY)
                     .setTooltip(Component.translatable("wynnrot.config.rainbowText.description"))
                     .setSaveConsumer(WynnrotConfig::updateRainbowText)
+                    .build());
+
+            hud.addEntry(entryBuilder
+                    .startBooleanToggle(
+                            Component.translatable("wynnrot.config.sixSevenQueen.name"), WynnrotConfig.sixSevenQueen())
+                    .setDefaultValue(true)
+                    .setTooltip(Component.translatable("wynnrot.config.sixSevenQueen.description"))
+                    .setSaveConsumer(WynnrotConfig::updateSixSevenQueen)
+                    .build());
+            hud.addEntry(entryBuilder
+                    .startIntSlider(
+                            Component.translatable("wynnrot.config.sixSevenQueenUpdateRate.name"),
+                            WynnrotConfig.sixSevenQueenUpdateRate(),
+                            1,
+                            100)
+                    .setDefaultValue(2)
+                    .setTooltip(Component.translatable("wynnrot.config.sixSevenQueenUpdateRate.description"))
+                    .setSaveConsumer(WynnrotConfig::updateSixSevenQueenUpdateRate)
                     .build());
             // endregion
 

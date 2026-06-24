@@ -6,7 +6,9 @@
 	  "BakedSheetGlyphMixin",
 	  "BossHealthOverlayMixin",
       "ChatListenerMixin",
-      "ClientPacketListenerMixin"
+      "ClientPacketListenerMixin",
+	  "GuiMixin",
+      "ScreenMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

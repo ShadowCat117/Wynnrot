@@ -3,6 +3,8 @@
   "wynnrot.config.category.hud": "HUD",
   "wynnrot.config.category.mobs": "Mobs",
   "wynnrot.config.category.sounds": "Sounds",
+  "wynnrot.config.dancingQueen.description": "Where should the dancing queen render?",
+  "wynnrot.config.dancingQueen.name": "Dancing Queen",
   "wynnrot.config.eternalHungerSui.description": "Make Sui always eating",
   "wynnrot.config.eternalHungerSui.name": "Eternal Hunger Sui",
   "wynnrot.config.eternalHungerSuiUpdateRate.description": "After how many ticks should the portrait update?",
