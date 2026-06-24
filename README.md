@@ -11,6 +11,8 @@ Wynncraft QoL mods? Never heard of them, it's time for some stupid changes
   - Replaces all of Sui's portraits with the eating portraits
 - Meow
   - Plays a random Minecraft cat sound when a chat message contains the word "meow"
+- Dancing Queen
+  - Adds the Fruma Queen dancing to your screen
 - Le Big Fishe
   - Replaces the "The Piranha" title in Galleon's Graveyard with "Le Big Fishe" and the same for the Corrupted version
 - Rainbow Text
@@ -28,4 +30,4 @@ Wynncraft QoL mods? Never heard of them, it's time for some stupid changes
 - [Cloth Config API](https://modrinth.com/mod/cloth-config) (Required)
 - [ModMenu](https://modrinth.com/mod/modmenu) (Optional)
 
-<img src="https://raw.githubusercontent.com/ShadowCat117/ShadowCat117.github.io/refs/heads/main/Resources/Wynnrot/LeBigFishe.png" alt="Le Big Fishe title">
+<img src="https://raw.githubusercontent.com/ShadowCat117/ShadowCat117.github.io/refs/heads/main/Resources/Wynnrot/DancingQueen.gif" alt="Dancing Queen">
