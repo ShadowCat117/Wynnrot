@@ -12,7 +12,9 @@ import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.multiplayer.ClientPacketListener;
 import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvent;
 
 public final class McUtils {
     public static Minecraft mc() {
@@ -51,7 +53,21 @@ public final class McUtils {
         return clientPacketListener.serverBrand();
     }
 
+    public static void sendMessageToClient(Component message) {
+        mc().getChatListener().handleSystemMessage(message, false);
+    }
+
     public static void sendWynnrotMessage(Component message) {
-        mc().getChatListener().handleSystemMessage(ComponentUtils.addWynnrotHeader(message), false);
+        sendMessageToClient(ComponentUtils.addWynnrotHeader(message));
+    }
+
+    public static void sendCommand(String command) {
+        if (mc().getConnection() == null) return;
+
+        mc().getConnection().sendCommand(command);
+    }
+
+    public static void playSound(SoundEvent sound) {
+        mc().getSoundManager().play(SimpleSoundInstance.forLocalAmbience(sound, 1.0f, 1.0f));
     }
 }

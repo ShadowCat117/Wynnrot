@@ -1,5 +1,6 @@
 {
   "wynnrot.config": "Wynnrot Configuration",
+  "wynnrot.config.category.gameplay": "Gameplay",
   "wynnrot.config.category.hud": "HUD",
   "wynnrot.config.category.mobs": "Mobs",
   "wynnrot.config.category.sounds": "Sounds",
@@ -9,6 +10,8 @@
   "wynnrot.config.eternalHungerSui.name": "Eternal Hunger Sui",
   "wynnrot.config.eternalHungerSuiUpdateRate.description": "After how many ticks should the portrait update?",
   "wynnrot.config.eternalHungerSuiUpdateRate.name": "Eternal Hunger Sui Update Rate",
+  "wynnrot.config.heartProblems.description": "Add a 1/30,000,000 chance to die from a heart attack every second?",
+  "wynnrot.config.heartProblems.name": "Heart Problems",
   "wynnrot.config.horseDeath.description": "Play the horse death sound when you die? It gets progressively louder the more you die in the current session.",
   "wynnrot.config.horseDeath.name": "Horse Death",
   "wynnrot.config.leBigFishe.description": "Replace the title with 'Le Big Fishe' in Galleon's Graveyard?",
@@ -23,6 +26,12 @@
   "wynnrot.config.sixSevenQueen.name": "Six Seven Queen",
   "wynnrot.config.sixSevenQueenUpdateRate.description": "After how many ticks should the portrait be updated?",
   "wynnrot.config.sixSevenQueenUpdateRate.name": "Six Seven Queen Update Rate",
+  "wynnrot.heartProblems.message1": "Somethings not right...",
+  "wynnrot.heartProblems.message2": "Your chest feels tight...",
+  "wynnrot.heartProblems.message3": "Your heartbeat is racing...",
+  "wynnrot.heartProblems.message4": "Your left arm feels numb...",
+  "wynnrot.heartProblems.message5": "You struggle to catch your breath...",
+  "wynnrot.heartProblems.message6": "Your vision begins to fade...",
   "wynnrot.updateAvailable1": "Wynnrot %s is available. It may contains fixes or new very useful features.",
   "wynnrot.updateAvailable2": "Get the new version here."
 }

@@ -19,13 +19,11 @@ Wynncraft QoL mods? Never heard of them, it's time for some stupid changes
   - Render the custom Wynncraft HUD or all text with the rainbow colour
 - Horse Death
   - Plays the horse death sound when you die. Gets progressively louder everytime you die in the current session
+- Heart Problems
+  - Adds a 1/30,000,000 chance to die from a heart attack every second
 
 <img src="https://raw.githubusercontent.com/ShadowCat117/ShadowCat117.github.io/refs/heads/main/Resources/Wynnrot/HungrySui.gif" alt="Sui Eating">
 
-## Future Features
-- More dumb stuff
-  - Feel free to suggest anything by opening an issue
- 
 ## Dependencies
 - [Cloth Config API](https://modrinth.com/mod/cloth-config) (Required)
 - [ModMenu](https://modrinth.com/mod/modmenu) (Optional)

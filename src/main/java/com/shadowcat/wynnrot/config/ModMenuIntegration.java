@@ -113,6 +113,19 @@ public class ModMenuIntegration implements ModMenuApi {
                     .build());
             // endregion
 
+            // region Gameplay
+            ConfigCategory gameplay =
+                    configBuilder.getOrCreateCategory(Component.translatable("wynnrot.config.category.gameplay"));
+
+            gameplay.addEntry(entryBuilder
+                    .startBooleanToggle(
+                            Component.translatable("wynnrot.config.heartProblems.name"), WynnrotConfig.heartProblems())
+                    .setDefaultValue(true)
+                    .setTooltip(Component.translatable("wynnrot.config.heartProblems.description"))
+                    .setSaveConsumer(WynnrotConfig::updateHeartProblems)
+                    .build());
+            // endregion
+
             // region Mobs
             ConfigCategory mobs =
                     configBuilder.getOrCreateCategory(Component.translatable("wynnrot.config.category.mobs"));

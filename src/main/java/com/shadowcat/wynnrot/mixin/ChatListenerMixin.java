@@ -19,7 +19,6 @@ import com.shadowcat.wynnrot.utils.SoundUtils;
 import java.util.Locale;
 import java.util.Random;
 import net.minecraft.client.multiplayer.chat.ChatListener;
-import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FontDescription;
 import net.minecraft.resources.Identifier;
@@ -79,9 +78,7 @@ public class ChatListenerMixin {
 
         if (message.getString().toLowerCase(Locale.ROOT).contains("meow")
                 && RANDOM.nextInt(100) < WynnrotConfig.meowChance()) {
-            McUtils.mc()
-                    .getSoundManager()
-                    .play(SimpleSoundInstance.forLocalAmbience(SoundUtils.getRandomCatSound(), 1.0f, 1.0f));
+            McUtils.playSound(SoundUtils.getRandomCatSound());
         }
     }
 }

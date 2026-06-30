@@ -8,6 +8,7 @@
       "ChatListenerMixin",
       "ClientPacketListenerMixin",
 	  "GuiMixin",
+	  "MinecraftMixin",
       "ScreenMixin"
 	],
 	"injectors": {

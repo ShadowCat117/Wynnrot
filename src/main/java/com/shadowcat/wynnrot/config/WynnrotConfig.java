@@ -30,6 +30,7 @@ public class WynnrotConfig {
         RainbowTextOptions rainbowText = RainbowTextOptions.HUD_ONLY;
         boolean horseDeath = true;
         BouncingQueenOptions dancingQueen = BouncingQueenOptions.EVERYWHERE;
+        boolean heartProblems = true;
     }
 
     public static void init() {
@@ -127,6 +128,15 @@ public class WynnrotConfig {
 
     public static void updateDancingQueen(BouncingQueenOptions value) {
         config.dancingQueen = value;
+        saveConfig();
+    }
+
+    public static boolean heartProblems() {
+        return config.heartProblems;
+    }
+
+    public static void updateHeartProblems(boolean value) {
+        config.heartProblems = value;
         saveConfig();
     }
 
