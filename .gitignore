@@ -9,6 +9,7 @@ classes/
 
 # Data generated while running Minecraft
 run/
+.devauth/microsoft_accounts.json
 
 # IDEs
 .idea/
