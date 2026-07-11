@@ -13,7 +13,7 @@ import com.shadowcat.wynnrot.utils.ComponentUtils;
 import com.shadowcat.wynnrot.utils.GuiGraphicsUtils;
 import com.shadowcat.wynnrot.utils.McUtils;
 import com.shadowcat.wynnrot.utils.MixinUtils;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.screens.inventory.InventoryScreen;
@@ -29,10 +29,13 @@ public class ScreenMixin {
     private static final long adStartTime = System.currentTimeMillis();
 
     @Inject(
-            method = "renderWithTooltipAndSubtitles(Lnet/minecraft/client/gui/GuiGraphics;IIF)V",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphics;renderDeferredElements()V"))
-    private void renderPreDeferredElements(
-            GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick, CallbackInfo ci) {
+            method = "extractRenderStateWithTooltipAndSubtitles(Lnet/minecraft/client/gui/GuiGraphicsExtractor;IIF)V",
+            at =
+                    @At(
+                            value = "INVOKE",
+                            target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;extractDeferredElements(IIF)V"))
+    private void extractPreDeferredElements(
+            GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY, float partialTick, CallbackInfo ci) {
         if (!MixinUtils.onWynncraft() || !WynnrotConfig.adBanner()) return;
 
         Screen screen = (Screen) (Object) this;
@@ -47,8 +50,11 @@ public class ScreenMixin {
         }
     }
 
-    @Inject(method = "renderWithTooltipAndSubtitles(Lnet/minecraft/client/gui/GuiGraphics;IIF)V", at = @At("RETURN"))
-    private void renderPost(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick, CallbackInfo ci) {
+    @Inject(
+            method = "extractRenderStateWithTooltipAndSubtitles(Lnet/minecraft/client/gui/GuiGraphicsExtractor;IIF)V",
+            at = @At("RETURN"))
+    private void extractPost(
+            GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY, float partialTick, CallbackInfo ci) {
         if (!MixinUtils.onWynncraft() || WynnrotConfig.dancingQueen() == BouncingQueenOptions.NOWHERE) return;
 
         Screen screen = (Screen) (Object) this;

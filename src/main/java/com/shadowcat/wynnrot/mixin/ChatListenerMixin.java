@@ -33,10 +33,10 @@ public class ChatListenerMixin {
     @Unique
     private static final Random RANDOM = new Random();
 
-    @WrapMethod(method = "handleSystemMessage(Lnet/minecraft/network/chat/Component;Z)V", order = 999)
-    private void wrapHandleSystemMessage(Component message, boolean isOverlay, Operation<Void> original) {
-        if (!MixinUtils.onWynncraft() || !isOverlay || !WynnrotConfig.editActionBar()) {
-            original.call(message, isOverlay);
+    @WrapMethod(method = "handleOverlay(Lnet/minecraft/network/chat/Component;)V", order = 999)
+    private void wrapHandleSystemMessage(Component message, Operation<Void> original) {
+        if (!MixinUtils.onWynncraft() || !WynnrotConfig.editActionBar()) {
+            original.call(message);
             return;
         }
 
@@ -67,11 +67,11 @@ public class ChatListenerMixin {
             newComponent = ComponentUtils.setColour(newComponent, Colours.RAINBOW);
         }
 
-        original.call(newComponent, true);
+        original.call(newComponent);
     }
 
     @Inject(method = "handleSystemMessage(Lnet/minecraft/network/chat/Component;Z)V", at = @At("HEAD"), order = 999)
-    private void handleSystemMessagePre(Component message, boolean isOverlay, CallbackInfo ci) {
+    private void handleSystemMessagePre(Component message, boolean remote, CallbackInfo ci) {
         if (!MixinUtils.onWynncraft() || !WynnrotConfig.meow() || WynnrotConfig.meowChance() == 0) {
             return;
         }

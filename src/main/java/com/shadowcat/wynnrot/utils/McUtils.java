@@ -30,11 +30,11 @@ public final class McUtils {
     }
 
     public static boolean hudHidden() {
-        return mc().options.hideGui;
+        return mc().gui.hud.isHidden();
     }
 
     public static Screen screen() {
-        return mc().screen;
+        return mc().gui.screen();
     }
 
     public static int tickCount() {
@@ -54,7 +54,7 @@ public final class McUtils {
     }
 
     public static void sendMessageToClient(Component message) {
-        mc().getChatListener().handleSystemMessage(message, false);
+        mc().gui.chatListener().handleSystemMessage(message, false);
     }
 
     public static void sendWynnrotMessage(Component message) {
