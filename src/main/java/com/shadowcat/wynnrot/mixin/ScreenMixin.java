@@ -11,7 +11,7 @@ import com.shadowcat.wynnrot.config.WynnrotConfig;
 import com.shadowcat.wynnrot.utils.ComponentUtils;
 import com.shadowcat.wynnrot.utils.McUtils;
 import com.shadowcat.wynnrot.utils.MixinUtils;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.screens.inventory.InventoryScreen;
@@ -23,8 +23,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(Screen.class)
 public class ScreenMixin {
-    @Inject(method = "renderWithTooltipAndSubtitles(Lnet/minecraft/client/gui/GuiGraphics;IIF)V", at = @At("RETURN"))
-    private void renderPost(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick, CallbackInfo ci) {
+    @Inject(
+            method = "extractRenderStateWithTooltipAndSubtitles(Lnet/minecraft/client/gui/GuiGraphicsExtractor;IIF)V",
+            at = @At("RETURN"))
+    private void extractPost(
+            GuiGraphicsExtractor guiGraphics, int mouseX, int mouseY, float partialTick, CallbackInfo ci) {
         if (!MixinUtils.onWynncraft() || WynnrotConfig.dancingQueen() == BouncingQueenOptions.NOWHERE) return;
 
         Screen screen = (Screen) (Object) this;

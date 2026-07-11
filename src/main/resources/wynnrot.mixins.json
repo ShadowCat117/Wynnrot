@@ -7,7 +7,7 @@
 	  "BossHealthOverlayMixin",
       "ChatListenerMixin",
       "ClientPacketListenerMixin",
-	  "GuiMixin",
+      "HudMixin",
 	  "MinecraftMixin",
       "ScreenMixin"
 	],

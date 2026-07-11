@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.DeltaTracker;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FontDescription;
 import net.minecraft.network.chat.MutableComponent;
@@ -126,7 +126,7 @@ public final class ComponentUtils {
         return rebuilt;
     }
 
-    public static void submitDancingQueen(GuiGraphics guiGraphics, DeltaTracker deltaTracker) {
+    public static void submitDancingQueen(GuiGraphicsExtractor guiGraphics, DeltaTracker deltaTracker) {
         float time = McUtils.tickCount() + deltaTracker.getGameTimeDeltaPartialTick(true);
 
         List<String> frames = Fonts.DANCING_QUEEN.characters();
