@@ -36,6 +36,8 @@ public class Wynnrot implements ModInitializer {
             return;
         }
 
+        if (FabricLoader.getInstance().isDevelopmentEnvironment()) return;
+
         ModUpdater.checkForUpdate();
     }
 
