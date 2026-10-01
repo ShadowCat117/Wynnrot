@@ -8,7 +8,7 @@ package com.shadowcat.wynnrot.utils;
 
 import com.shadowcat.wynnrot.Wynnrot;
 import com.shadowcat.wynnrot.data.Colours;
-import com.shadowcat.wynnrot.data.Fonts;
+import com.shadowcat.wynnrot.data.FrequentFonts;
 import java.util.List;
 import java.util.Optional;
 import net.minecraft.ChatFormatting;
@@ -47,14 +47,14 @@ public final class ComponentUtils {
                     if (originalCharacters.contains(text)
                             && style.getFont() instanceof FontDescription.Resource(Identifier id)
                             && id.equals(originalFont)) {
-                        String prefix = Fonts.PREFIX_OFFSETS.getOrDefault(text, "");
+                        String prefix = FrequentFonts.PREFIX_OFFSETS.getOrDefault(text, "");
                         if (!prefix.isEmpty()) {
                             copy.append(Component.literal(prefix).withStyle(style));
                         }
 
                         copy.append(Component.literal(replacementCharacter).withStyle(style.withFont(replacementFont)));
 
-                        String suffix = Fonts.SUFFIX_OFFSETS.getOrDefault(text, "");
+                        String suffix = FrequentFonts.SUFFIX_OFFSETS.getOrDefault(text, "");
                         if (!suffix.isEmpty()) {
                             copy.append(Component.literal(suffix).withStyle(style));
                         }
@@ -129,7 +129,7 @@ public final class ComponentUtils {
     public static void submitDancingQueen(GuiGraphics guiGraphics, DeltaTracker deltaTracker) {
         float time = McUtils.tickCount() + deltaTracker.getGameTimeDeltaPartialTick(true);
 
-        List<String> frames = Fonts.DANCING_QUEEN.characters();
+        List<String> frames = FrequentFonts.DANCING_QUEEN.characters();
         int frameIndex = ((int) (time / 5)) % frames.size();
         String current = frames.get(frameIndex);
 
@@ -149,7 +149,7 @@ public final class ComponentUtils {
 
         Component component = Component.literal(current)
                 .withStyle(Style.EMPTY
-                        .withFont(new FontDescription.Resource(Fonts.DANCING_QUEEN.identifier()))
+                        .withFont(new FontDescription.Resource(FrequentFonts.DANCING_QUEEN.identifier()))
                         .withoutShadow());
 
         GuiGraphicsUtils.submitText(guiGraphics, component, x, y, Colours.WHITE);

@@ -11,7 +11,7 @@ import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.shadowcat.wynnrot.config.RainbowTextOptions;
 import com.shadowcat.wynnrot.config.WynnrotConfig;
 import com.shadowcat.wynnrot.data.Colours;
-import com.shadowcat.wynnrot.data.Fonts;
+import com.shadowcat.wynnrot.data.FrequentFonts;
 import com.shadowcat.wynnrot.utils.ComponentUtils;
 import com.shadowcat.wynnrot.utils.McUtils;
 import com.shadowcat.wynnrot.utils.MixinUtils;
@@ -46,20 +46,20 @@ public class ChatListenerMixin {
             newComponent = ComponentUtils.replaceCharacterAnimated(
                     newComponent,
                     "\uE0D2",
-                    Fonts.FRUMA_QUEEN_67.characters(),
+                    FrequentFonts.FRUMA_QUEEN_67.characters(),
                     WynnrotConfig.sixSevenQueenUpdateRate(),
                     Identifier.withDefaultNamespace("hud/dialogue/portrait"),
-                    new FontDescription.Resource(Fonts.FRUMA_QUEEN_67.identifier()));
+                    new FontDescription.Resource(FrequentFonts.FRUMA_QUEEN_67.identifier()));
         }
 
         if (WynnrotConfig.eternalHungerSui()) {
             newComponent = ComponentUtils.replaceCharactersAnimated(
                     newComponent,
-                    Fonts.SUI.characters(),
-                    Fonts.SUI_EATING.characters(),
+                    FrequentFonts.SUI.characters(),
+                    FrequentFonts.SUI_EATING.characters(),
                     WynnrotConfig.eternalHungerSuiUpdateRate(),
-                    Fonts.SUI.identifier(),
-                    new FontDescription.Resource(Fonts.SUI_EATING.identifier()));
+                    FrequentFonts.SUI.identifier(),
+                    new FontDescription.Resource(FrequentFonts.SUI_EATING.identifier()));
         }
 
         // No need to check for ALL_TEXT here as the mixin to handle that covers this

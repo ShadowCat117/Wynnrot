@@ -10,13 +10,13 @@ import java.util.List;
 import java.util.Map;
 import net.minecraft.resources.Identifier;
 
-public record Fonts(Identifier identifier, List<String> characters) {
+public record FrequentFonts(Identifier identifier, List<String> characters) {
     public static final Identifier PORTRAIT_FONT = Identifier.withDefaultNamespace("hud/dialogue/portrait");
 
-    public static final Fonts FRUMA_QUEEN_67 = new Fonts(
+    public static final FrequentFonts FRUMA_QUEEN_67 = new FrequentFonts(
             Identifier.fromNamespaceAndPath("wynnrot", "hud/dialogue/portrait"),
             List.of("\uE000", "\uE001", "\uE002", "\uE003", "\uE004", "\uE005", "\uE006", "\uE007"));
-    public static final Fonts SUI = new Fonts(
+    public static final FrequentFonts SUI = new FrequentFonts(
             PORTRAIT_FONT,
             List.of(
                     "\uE170", "\uE171", "\uE172", "\uE173", "\uE174", "\uE175", "\uE176", "\uE177", "\uE178", "\uE179",
@@ -24,9 +24,10 @@ public record Fonts(Identifier identifier, List<String> characters) {
                     "\uE188", "\uE189", "\uE18A", "\uE18B", "\uE18C", "\uE18D", "\uE18E", "\uE190", "\uE191", "\uE192",
                     "\uE193", "\uE194", "\uE195", "\uE196", "\uE197", "\uE198", "\uE199", "\uE19A", "\uE19B", "\uE19C",
                     "\uE19D", "\uE19E"));
-    public static final Fonts SUI_EATING = new Fonts(PORTRAIT_FONT, List.of("\uE17A", "\uE17B"));
+    public static final FrequentFonts SUI_EATING = new FrequentFonts(PORTRAIT_FONT, List.of("\uE17A", "\uE17B"));
 
-    public static final Fonts DANCING_QUEEN = new Fonts(PORTRAIT_FONT, List.of("\uE0D5", "\uE0DA", "\uE0DB", "\uE0DC"));
+    public static final FrequentFonts DANCING_QUEEN =
+            new FrequentFonts(PORTRAIT_FONT, List.of("\uE0D5", "\uE0DA", "\uE0DB", "\uE0DC"));
 
     // TODO: Clean this up so it's not a massive hard coded map
     // When replacing a portrait, we need to make sure the "used" area of the sprite matches the
