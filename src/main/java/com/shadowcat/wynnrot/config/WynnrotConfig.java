@@ -32,6 +32,7 @@ public class WynnrotConfig {
         BouncingQueenOptions dancingQueen = BouncingQueenOptions.EVERYWHERE;
         boolean heartProblems = true;
         boolean obnoxiousPodium = true;
+        boolean adBanner = true;
     }
 
     public static void init() {
@@ -147,6 +148,15 @@ public class WynnrotConfig {
 
     public static void updateObnoxiousPodium(boolean value) {
         config.obnoxiousPodium = value;
+        saveConfig();
+    }
+
+    public static boolean adBanner() {
+        return config.adBanner;
+    }
+
+    public static void updateAdBanner(boolean value) {
+        config.adBanner = value;
         saveConfig();
     }
 

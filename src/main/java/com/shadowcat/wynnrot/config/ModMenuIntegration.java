@@ -139,13 +139,27 @@ public class ModMenuIntegration implements ModMenuApi {
                     .build());
             // endregion
 
+            // region UI
+            ConfigCategory ui = configBuilder.getOrCreateCategory(Component.translatable("wynnrot.config.category.ui"));
+
+            ui.addEntry(entryBuilder
+                    .startBooleanToggle(
+                            Component.translatable("wynnrot.config.adBanner.name"),
+                            WynnrotConfig.adBanner())
+                    .setDefaultValue(true)
+                    .setTooltip(Component.translatable("wynnrot.config.adBanner.description"))
+                    .setSaveConsumer(WynnrotConfig::updateAdBanner)
+                    .build());
+            // endregion
+
             // region World
             ConfigCategory world =
                     configBuilder.getOrCreateCategory(Component.translatable("wynnrot.config.category.world"));
 
             world.addEntry(entryBuilder
                     .startBooleanToggle(
-                            Component.translatable("wynnrot.config.obnoxiousPodium.name"), WynnrotConfig.obnoxiousPodium())
+                            Component.translatable("wynnrot.config.obnoxiousPodium.name"),
+                            WynnrotConfig.obnoxiousPodium())
                     .setDefaultValue(true)
                     .setTooltip(Component.translatable("wynnrot.config.obnoxiousPodium.description"))
                     .setSaveConsumer(WynnrotConfig::updateObnoxiousPodium)
