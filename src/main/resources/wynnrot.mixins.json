@@ -9,7 +9,8 @@
       "ClientPacketListenerMixin",
 	  "GuiMixin",
 	  "MinecraftMixin",
-      "ScreenMixin"
+      "ScreenMixin",
+	  "TextDisplayRendererMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

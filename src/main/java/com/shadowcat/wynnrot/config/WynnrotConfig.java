@@ -31,6 +31,7 @@ public class WynnrotConfig {
         boolean horseDeath = true;
         BouncingQueenOptions dancingQueen = BouncingQueenOptions.EVERYWHERE;
         boolean heartProblems = true;
+        boolean obnoxiousPodium = true;
     }
 
     public static void init() {
@@ -137,6 +138,15 @@ public class WynnrotConfig {
 
     public static void updateHeartProblems(boolean value) {
         config.heartProblems = value;
+        saveConfig();
+    }
+
+    public static boolean obnoxiousPodium() {
+        return config.obnoxiousPodium;
+    }
+
+    public static void updateObnoxiousPodium(boolean value) {
+        config.obnoxiousPodium = value;
         saveConfig();
     }
 

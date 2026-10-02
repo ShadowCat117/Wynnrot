@@ -139,6 +139,19 @@ public class ModMenuIntegration implements ModMenuApi {
                     .build());
             // endregion
 
+            // region World
+            ConfigCategory world =
+                    configBuilder.getOrCreateCategory(Component.translatable("wynnrot.config.category.world"));
+
+            world.addEntry(entryBuilder
+                    .startBooleanToggle(
+                            Component.translatable("wynnrot.config.obnoxiousPodium.name"), WynnrotConfig.obnoxiousPodium())
+                    .setDefaultValue(true)
+                    .setTooltip(Component.translatable("wynnrot.config.obnoxiousPodium.description"))
+                    .setSaveConsumer(WynnrotConfig::updateObnoxiousPodium)
+                    .build());
+            // endregion
+
             return configBuilder.build();
         };
     }
