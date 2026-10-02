@@ -144,8 +144,7 @@ public class ModMenuIntegration implements ModMenuApi {
 
             ui.addEntry(entryBuilder
                     .startBooleanToggle(
-                            Component.translatable("wynnrot.config.adBanner.name"),
-                            WynnrotConfig.adBanner())
+                            Component.translatable("wynnrot.config.adBanner.name"), WynnrotConfig.adBanner())
                     .setDefaultValue(true)
                     .setTooltip(Component.translatable("wynnrot.config.adBanner.description"))
                     .setSaveConsumer(WynnrotConfig::updateAdBanner)
