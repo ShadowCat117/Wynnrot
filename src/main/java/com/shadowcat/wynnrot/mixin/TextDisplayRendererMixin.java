@@ -33,7 +33,7 @@ public class TextDisplayRendererMixin {
 
     @Unique
     private static final Pattern OFFER_PATTERN =
-            Pattern.compile(".+ Offer\n(?:\\d+h )?(?:\\d+m )?(?:\\d+s)?\n\n\\d+% OFF .+");
+            Pattern.compile(".+ Offer\n(?:\\d+d )?(?:\\d+h )?(?:\\d+m )?(?:\\d+s)?\n\n\\d+% OFF .+");
 
     @Unique
     private static final Pattern FREE_CRATE_PATTERN = Pattern.compile("Free Crate Available!\nClick to claim");
